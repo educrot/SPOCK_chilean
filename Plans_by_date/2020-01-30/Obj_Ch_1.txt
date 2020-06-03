@@ -1,0 +1,22 @@
+;
+; Ch_1
+;
+; gaia_id
+;
+#waituntil 1, 2020/05/27 00:30:00
+#domeopen
+#chill -60
+#waitinlimits 600
+#nopreview 
+;#afinterval 60
+;#autofocus 
+#count 5000
+#binning 1
+#filter I+z
+#interval 20
+#TAG Donuts=on
+Ch_1	12 07 26.64	-52 47 18.91
+;
+#quitat 04:00
+#chain Cal_flatdawn.txt
+;
