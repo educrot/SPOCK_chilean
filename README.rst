@@ -21,7 +21,7 @@ Documentation SPOCK_chilean
 
 You will find complete documentation for setting up your project at `SPOCK documentation site`_.
 
-.. _SPOCK documentation site : https://educrot.github.io/SPOCK/index.html
+.. _SPOCK documentation site : https://educrot.github.io/SPOCK_chilean/index.html
 
 
 Installation

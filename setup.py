@@ -12,7 +12,7 @@ setup(
     author_email = 'educrot@uliege.be',
     description = ('Speculoos Observatory SChedule maKer for chilean night on SPECULOOS South Observatory'),
     keywords = '',
-    url = 'https://github.com/educrot/SPOCK/',
+    url = 'https://github.com/educrot/SPOCK_chilean/',
     packages = find_packages(),
     long_description = read('README.rst'),
     install_requires = ['pandas','numpy','astroplan','astropy','matplotlib','datetime','pyaml','docx','plotly'],
