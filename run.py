@@ -1,8 +1,8 @@
 import pandas as pd
-from SPOCK_chilean_nights.make_night_plans import chilean_time
+from SPOCK_chilean.make_night_plans import chilean_time
 
 import pandas as pd
-from SPOCK_chilean_nights.make_night_plans import chilean_time
+from SPOCK_chilean.make_night_plans import chilean_time
 
 # set in advance with the planning with SSO team
 telescope = 'Ganymede'

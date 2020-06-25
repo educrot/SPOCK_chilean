@@ -11,7 +11,7 @@ OSX
 
 Install *SPOCK* locally::
 
-    git clone http://speculoos7.astro.ulg.ac.be/gitlab/eDucrot/spock_chilean_nights.git
+    git clone http://speculoos7.astro.ulg.ac.be/gitlab/eDucrot/spock_chilean.git
 
     cd spock
     python setup.py install

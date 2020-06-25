@@ -3,15 +3,15 @@
 Quick reference
 ===============
 
-|SPOCK_chilean_nights| quick reference
+|SPOCK_chilean| quick reference
 
 ACP plans Make & Check
 ----------
 
-|SPOCK_chilean_nights| :py:class:`~SPOCK_chilean_nights.make_night_plans.chilean_time` class holds methods:
+|SPOCK_chilean| :py:class:`~SPOCK_chilean.make_night_plans.chilean_time` class holds methods:
 
 
-.. currentmodule:: SPOCK_chilean_nights.make_night_plans.chilean_time
+.. currentmodule:: SPOCK_chilean.make_night_plans.chilean_time
 
 .. rubric:: Make plans
 
@@ -30,10 +30,10 @@ ACP plans Make & Check
 Functions to write text files
 ----------
 
-|SPOCK_chilean_nights| :py:class:`~SPOCK_chilean_nights.make_night_plans.txt_files` class holds methods:
+|SPOCK_chilean| :py:class:`~SPOCK_chilean.make_night_plans.txt_files` class holds methods:
 
 
-.. currentmodule:: SPOCK_chilean_nights.txt_files
+.. currentmodule:: SPOCK_chilean.txt_files
 
 .. rubric:: ACP format files
 

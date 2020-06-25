@@ -10,9 +10,9 @@ import sys
 import shutil
 import numpy as np
 import pandas as pd
-import SPOCK_chilean_nights.ETC as ETC
-from SPOCK_chilean_nights.txt_files import startup, flatexo_gany, flatexo_io, flatexo_euro, flatexo_calli
-from SPOCK_chilean_nights.txt_files import first_target, flatdawn, biasdark
+import SPOCK_chilean.ETC as ETC
+from SPOCK_chilean.txt_files import startup, flatexo_gany, flatexo_io, flatexo_euro, flatexo_calli
+from SPOCK_chilean.txt_files import first_target, flatdawn, biasdark
 from astropy.utils import iers
 #iers.IERS_A_URL  ='ftp://cddis.gsfc.nasa.gov/pub/products/iers/finals2000A.all'
 #from astroplan import download_IERS_A
@@ -298,7 +298,7 @@ class chilean_time:
         """
 
         catalog_data = Catalogs.query_object(str(ra) + str(dec), radius=6*np.sqrt(2) * u.arcminute, catalog="Gaia")
-        df = pd.read_csv('./SPOCK_chilean_nights/speculoos_target_list_chilean_nights.txt',delimiter=' ')
+        df = pd.read_csv('./SPOCK_chilean/speculoos_target_list_chilean_nights.txt',delimiter=' ')
         idx_speculoos_found = [np.where((catalog_data['designation'] == 'Gaia DR2 ' + str(gaia_id))) for gaia_id in df['Gaia_ID']]
         if np.any(idx_speculoos_found):
             sys.exit('ERROR: There is a SPECULOOS target in this field, please change your coordinates')

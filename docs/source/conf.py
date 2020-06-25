@@ -41,7 +41,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'SPOCK_chilean_nights'
+project = u'SPOCK_chilean'
 copyright = u'2020, Elsa Ducrot'
 author = u'Elsa Ducrot'
 

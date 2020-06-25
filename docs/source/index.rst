@@ -19,9 +19,9 @@ of the solar neighborhood `Link to site <https://www.speculoos.uliege.be/cms/c_4
    :caption: Quick start
    :maxdepth: 2
 
-   examples/SPOCK_chilean_nights/pythontuto.rst
-   examples/SPOCK_chilean_nights/exampleapp.rst
-   examples/SPOCK_chilean_nights/run.ipynb
+   examples/SPOCK_chilean/pythontuto.rst
+   examples/SPOCK_chilean/exampleapp.rst
+   examples/SPOCK_chilean/run.ipynb
 
 
 
