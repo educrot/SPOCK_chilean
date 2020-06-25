@@ -136,6 +136,7 @@ SPOCK_chilean_nights/files_ETC/__pycache__/ETC.cpython-37.pyc
 __pycache__/ETC.cpython-37.pyc
 __pycache__/make_night_plans.cpython-37.pyc
 __pycache__/test_txtfiles.cpython-37.pyc
+dist/SPOCK_chilean-0.0.0-py3.7.egg
 doc/.DS_Store
 doc/build/.buildinfo
 doc/build/.nojekyll

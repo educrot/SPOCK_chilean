@@ -8,13 +8,6 @@ searches for potentially habitable exoplanets around the smallest and coolest st
 of the solar neighborhood `Link to site <https://www.speculoos.uliege.be/cms/c_4259452/fr/speculoos>`_.
 
 
-Targets are scheduled following several criteria:
-
-*  Observability
-
-*  Priority
-
-*  Number of hours already performed
 
 Documentation SPOCK_chilean
 -----------------------------
@@ -29,7 +22,7 @@ Installation
 
 Use the package manager [git clone]() to install SPOCK::
 
-    git clone http://speculoos7.astro.ulg.ac.be/gitlab/eDucrot/spock.git
+    git clone http://speculoos7.astro.ulg.ac.be/gitlab/eDucrot/spock_chilean.git
 
     cd spock
 
