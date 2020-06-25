@@ -1,0 +1,48 @@
+.. image:: https://img.shields.io/badge/docs-dev-blue.svg
+    :target: https://educrot.github.io/SPOCK_chilean/index.html
+
+
+**SPOCK** (Speculoos Observatory SChedule maKer) is a python package developed to handle
+the planification of observation of the SPECULOOS telescopes. The project SPECULOOS -Search for habitable Planets EClipsing ULtra-cOOl Stars –
+searches for potentially habitable exoplanets around the smallest and coolest stars
+of the solar neighborhood `Link to site <https://www.speculoos.uliege.be/cms/c_4259452/fr/speculoos>`_.
+
+
+Targets are scheduled following several criteria:
+
+*  Observability
+
+*  Priority
+
+*  Number of hours already performed
+
+Documentation SPOCK_chilean
+-----------------------------
+
+You will find complete documentation for setting up your project at `SPOCK documentation site`_.
+
+.. _SPOCK documentation site : https://educrot.github.io/SPOCK/index.html
+
+
+Installation
+---------------------
+
+Use the package manager [git clone]() to install SPOCK::
+
+    git clone http://speculoos7.astro.ulg.ac.be/gitlab/eDucrot/spock.git
+
+    cd spock
+
+    python setup.py install
+
+
+
+Contributing
+---------------------
+Suggestions are welcome and feel free to open an issue if you see a bug.
+
+
+License
+---------------------
+
+<span style=“color:red;”> text </span>
