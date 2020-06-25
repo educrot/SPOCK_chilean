@@ -1,3 +1,4 @@
+import numpy
 from astropy.time import Time
 from astropy.coordinates import SkyCoord,EarthLocation
 from astroplan import FixedTarget,is_observable,AltitudeConstraint, MoonSeparationConstraint,AtNightConstraint

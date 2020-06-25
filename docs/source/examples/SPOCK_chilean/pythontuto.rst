@@ -1,7 +1,7 @@
 .. _pythontuto:
 
 Python use
-=========
+============
 
 In this tutorial you will learn how to use |SPOCK_chilean| to create and check ACP plans for SSO observations
 

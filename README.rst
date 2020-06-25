@@ -1,4 +1,7 @@
-.. image:: https://img.shields.io/badge/docs-dev-blue.svg
+.. image:: https://travis-ci.com/educrot/SPOCK_chilean.svg?branch=master
+    :target: https://travis-ci.com/educrot/SPOCK_chilean
+
+.. image:: https://img.shields.io/badge/docs-dev-green.svg
     :target: https://educrot.github.io/SPOCK_chilean/index.html
 
 
@@ -22,7 +25,7 @@ Installation
 
 Use the package manager [git clone]() to install SPOCK::
 
-    git clone http://speculoos7.astro.ulg.ac.be/gitlab/eDucrot/spock_chilean.git
+    git clone https://github.com/educrot/SPOCK_chilean.git
 
     cd spock
 
