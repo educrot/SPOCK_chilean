@@ -3,7 +3,7 @@
 ;
 ; gaia_id
 ;
-#waituntil 1, 2020/06/26 03:00:00
+#waituntil 1, 2020/06/26 06:00:00
 #domeopen
 #chill -60
 #waitinlimits 600
@@ -17,6 +17,6 @@
 #TAG Donuts=on
 Ch3	23 04 00.00	-05 02 24.00
 ;
-#quitat 04:00
+#quitat 07:00
 #chain Cal_flatdawn.txt
 ;

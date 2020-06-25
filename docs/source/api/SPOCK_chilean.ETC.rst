@@ -1,4 +1,4 @@
-SPOCK\_chilean\_nights.ETC
+SPOCK\_chilean.ETC
 ===========================
 
 .. automodule:: SPOCK_chilean.ETC

@@ -1,0 +1,525 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>SPOCK_chilean.make_night_plans &mdash; SPOCK_chilean 0.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/jupyter-sphinx.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #007541" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> SPOCK_chilean
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Content</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../content/api.html">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../content/quick-ref.html">Quick reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../content/installation.html">Installation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Quick start</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/SPOCK_chilean/pythontuto.html">Python use</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/SPOCK_chilean/exampleapp.html">Application</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">SPOCK_chilean</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+      <li>SPOCK_chilean.make_night_plans</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for SPOCK_chilean.make_night_plans</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">astropy.time</span> <span class="kn">import</span> <span class="n">Time</span>
+<span class="kn">from</span> <span class="nn">astropy.coordinates</span> <span class="kn">import</span> <span class="n">SkyCoord</span><span class="p">,</span><span class="n">EarthLocation</span>
+<span class="kn">from</span> <span class="nn">astroplan</span> <span class="kn">import</span> <span class="n">FixedTarget</span><span class="p">,</span><span class="n">is_observable</span><span class="p">,</span><span class="n">AltitudeConstraint</span><span class="p">,</span> <span class="n">MoonSeparationConstraint</span><span class="p">,</span><span class="n">AtNightConstraint</span>
+<span class="kn">from</span> <span class="nn">astroplan</span> <span class="kn">import</span> <span class="n">Observer</span><span class="p">,</span><span class="n">moon_illumination</span><span class="p">,</span><span class="n">is_always_observable</span>
+<span class="kn">from</span> <span class="nn">astropy</span> <span class="kn">import</span> <span class="n">units</span> <span class="k">as</span> <span class="n">u</span>
+<span class="kn">from</span> <span class="nn">astroquery.mast</span> <span class="kn">import</span> <span class="n">Catalogs</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">shutil</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">SPOCK_chilean.ETC</span> <span class="k">as</span> <span class="nn">ETC</span>
+<span class="kn">from</span> <span class="nn">SPOCK_chilean.txt_files</span> <span class="kn">import</span> <span class="n">startup</span><span class="p">,</span> <span class="n">flatexo_gany</span><span class="p">,</span> <span class="n">flatexo_io</span><span class="p">,</span> <span class="n">flatexo_euro</span><span class="p">,</span> <span class="n">flatexo_calli</span>
+<span class="kn">from</span> <span class="nn">SPOCK_chilean.txt_files</span> <span class="kn">import</span> <span class="n">first_target</span><span class="p">,</span> <span class="n">flatdawn</span><span class="p">,</span> <span class="n">biasdark</span>
+<span class="kn">from</span> <span class="nn">astropy.utils</span> <span class="kn">import</span> <span class="n">iers</span>
+<span class="c1">#iers.IERS_A_URL  =&#39;ftp://cddis.gsfc.nasa.gov/pub/products/iers/finals2000A.all&#39;</span>
+<span class="c1">#from astroplan import download_IERS_A</span>
+<span class="c1">#download_IERS_A()</span>
+
+
+<div class="viewcode-block" id="chilean_time"><a class="viewcode-back" href="../../content/api.html#SPOCK_chilean.make_night_plans.chilean_time">[docs]</a><span class="k">class</span> <span class="nc">chilean_time</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot; Create and check ACP plans for 10% of SSO&#39;s on-sky-time dedicated to chilean observations</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">start_date</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        start_date : date</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">start_date</span> <span class="o">=</span> <span class="n">start_date</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Path</span> <span class="o">=</span> <span class="s1">&#39;./Plans_by_date/&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">Time</span><span class="p">(</span><span class="n">start_date</span><span class="p">,</span> <span class="n">out_subfmt</span><span class="o">=</span><span class="s1">&#39;date&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">location</span> <span class="o">=</span> <span class="n">EarthLocation</span><span class="o">.</span><span class="n">from_geodetic</span><span class="p">(</span><span class="o">-</span><span class="mf">70.40300000000002</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">deg</span><span class="p">,</span> <span class="o">-</span><span class="mf">24.625199999999996</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">deg</span><span class="p">,</span><span class="mf">2635.0000000009704</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">m</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">observatory</span> <span class="o">=</span> <span class="n">Observer</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">location</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;SSO&quot;</span><span class="p">,</span> <span class="n">timezone</span><span class="o">=</span><span class="s2">&quot;UTC&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">time_start</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">time_end</span> <span class="o">=</span> <span class="kc">None</span>
+
+<div class="viewcode-block" id="chilean_time.make_plans"><a class="viewcode-back" href="../../content/api.html#SPOCK_chilean.make_night_plans.chilean_time.make_plans">[docs]</a>    <span class="k">def</span> <span class="nf">make_plans</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">target_chilean</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Make plans from basic information of each target</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        target_chilean : pd.DataFrame</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        txt files</span>
+<span class="sd">            set of ACP format file required for the observations</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Path</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">FileExistsError</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;INFO: File for date &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">Time</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">start_date</span><span class="p">,</span> <span class="n">out_subfmt</span><span class="o">=</span><span class="s1">&#39;date&#39;</span><span class="p">))</span> <span class="o">+</span> <span class="s1">&#39; exists, overwriting&#39;</span><span class="p">)</span>
+            <span class="n">shutil</span><span class="o">.</span><span class="n">rmtree</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Path</span><span class="p">)</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Path</span><span class="p">)</span>
+
+        <span class="c1"># constants</span>
+        <span class="n">autofocus</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">waitlimit</span> <span class="o">=</span> <span class="mi">600</span>
+        <span class="n">afinterval</span> <span class="o">=</span> <span class="mi">60</span>
+        <span class="n">filters_used</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="c1"># sun  rise and sun set</span>
+        <span class="n">t_day_15</span> <span class="o">=</span> <span class="n">Time</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">start_date</span><span class="p">,</span> <span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span><span class="o">+</span><span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="mi">15</span><span class="p">))</span>
+        <span class="n">sun_set</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">observatory</span><span class="o">.</span><span class="n">sun_set_time</span><span class="p">(</span><span class="n">t_day_15</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s1">&#39;next&#39;</span><span class="p">)</span>
+        <span class="n">sun_rise</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">observatory</span><span class="o">.</span><span class="n">sun_rise_time</span><span class="p">(</span><span class="n">t_day_15</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s1">&#39;next&#39;</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">target_chilean</span><span class="p">)):</span>
+            <span class="k">if</span> <span class="n">i</span><span class="o">&lt;</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">target_chilean</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+                <span class="n">chain</span> <span class="o">=</span> <span class="n">target_chilean</span><span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">][</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">chain</span> <span class="o">=</span> <span class="kc">None</span>
+
+            <span class="k">if</span> <span class="n">target_chilean</span><span class="p">[</span><span class="s1">&#39;texp&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">texp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">etc_chilean</span><span class="p">(</span><span class="n">target_chilean</span><span class="p">[</span><span class="s1">&#39;Jmag&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">],</span><span class="n">target_chilean</span><span class="p">[</span><span class="s1">&#39;SpT&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">],</span>
+                                        <span class="n">filt</span><span class="o">=</span><span class="n">target_chilean</span><span class="p">[</span><span class="s1">&#39;Filter&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">])</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">texp</span> <span class="o">=</span> <span class="n">target_chilean</span><span class="p">[</span><span class="s1">&#39;texp&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">]</span>
+
+            <span class="n">coords</span> <span class="o">=</span> <span class="n">SkyCoord</span><span class="p">(</span><span class="n">frame</span><span class="o">=</span><span class="s1">&#39;icrs&#39;</span><span class="p">,</span> <span class="n">ra</span><span class="o">=</span><span class="n">target_chilean</span><span class="p">[</span><span class="s1">&#39;RA&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">],</span> <span class="n">dec</span><span class="o">=</span><span class="n">target_chilean</span><span class="p">[</span><span class="s1">&#39;DEC&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">],</span>
+                              <span class="n">unit</span><span class="o">=</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">deg</span><span class="p">,</span> <span class="n">u</span><span class="o">.</span><span class="n">deg</span><span class="p">),</span> <span class="n">obstime</span><span class="o">=</span><span class="n">Time</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">start_date</span><span class="p">)</span><span class="o">.</span><span class="n">iso</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">time_start</span> <span class="o">=</span> <span class="n">Time</span><span class="p">(</span><span class="n">target_chilean</span><span class="p">[</span><span class="s1">&#39;Start&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">iso</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">time_end</span> <span class="o">=</span> <span class="n">Time</span><span class="p">(</span><span class="n">target_chilean</span><span class="p">[</span><span class="s1">&#39;End&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">iso</span>
+
+                <span class="k">if</span> <span class="s1">&#39;Io&#39;</span> <span class="ow">in</span> <span class="n">target_chilean</span><span class="p">[</span><span class="s1">&#39;Telescope&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]:</span>
+                    <span class="n">startup</span><span class="p">(</span><span class="n">target_chilean</span><span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">sun_set</span><span class="o">.</span><span class="n">iso</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">time_start</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">Path</span><span class="p">)</span>
+                    <span class="n">first_target</span><span class="p">(</span><span class="n">target_chilean</span><span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">time_start</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">time_end</span><span class="p">,</span> <span class="n">waitlimit</span><span class="p">,</span> <span class="n">afinterval</span><span class="p">,</span> <span class="n">autofocus</span><span class="p">,</span>
+                                 <span class="n">target_chilean</span><span class="p">[</span><span class="s1">&#39;Counts&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">target_chilean</span><span class="p">[</span><span class="s1">&#39;Filter&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">texp</span><span class="p">,</span>
+                                 <span class="n">coords</span><span class="o">.</span><span class="n">ra</span><span class="o">.</span><span class="n">hms</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">coords</span><span class="o">.</span><span class="n">ra</span><span class="o">.</span><span class="n">hms</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">coords</span><span class="o">.</span><span class="n">ra</span><span class="o">.</span><span class="n">hms</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">coords</span><span class="o">.</span><span class="n">dec</span><span class="o">.</span><span class="n">dms</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">coords</span><span class="o">.</span><span class="n">dec</span><span class="o">.</span><span class="n">dms</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+                                 <span class="n">coords</span><span class="o">.</span><span class="n">dec</span><span class="o">.</span><span class="n">dms</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">chain</span><span class="p">,</span> <span class="n">target_chilean</span><span class="p">[</span><span class="s1">&#39;Gaia_ID&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">Path</span><span class="p">)</span>
+                <span class="k">if</span> <span class="s1">&#39;Europa&#39;</span> <span class="ow">in</span> <span class="n">target_chilean</span><span class="p">[</span><span class="s1">&#39;Telescope&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]:</span>
+                    <span class="n">startup</span><span class="p">(</span><span class="n">target_chilean</span><span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">sun_set</span><span class="o">.</span><span class="n">iso</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">time_start</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">Path</span><span class="p">)</span>
+                    <span class="n">first_target</span><span class="p">(</span><span class="n">target_chilean</span><span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">time_start</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">time_end</span><span class="p">,</span> <span class="n">waitlimit</span><span class="p">,</span> <span class="n">afinterval</span><span class="p">,</span> <span class="n">autofocus</span><span class="p">,</span>
+                                 <span class="n">target_chilean</span><span class="p">[</span><span class="s1">&#39;Counts&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">target_chilean</span><span class="p">[</span><span class="s1">&#39;Filter&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span><span class="n">texp</span><span class="p">,</span>
+                                 <span class="n">coords</span><span class="o">.</span><span class="n">ra</span><span class="o">.</span><span class="n">hms</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">coords</span><span class="o">.</span><span class="n">ra</span><span class="o">.</span><span class="n">hms</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">coords</span><span class="o">.</span><span class="n">ra</span><span class="o">.</span><span class="n">hms</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">coords</span><span class="o">.</span><span class="n">dec</span><span class="o">.</span><span class="n">dms</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">coords</span><span class="o">.</span><span class="n">dec</span><span class="o">.</span><span class="n">dms</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+                                 <span class="n">coords</span><span class="o">.</span><span class="n">dec</span><span class="o">.</span><span class="n">dms</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">chain</span><span class="p">,</span> <span class="n">target_chilean</span><span class="p">[</span><span class="s1">&#39;Gaia_ID&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">Path</span><span class="p">)</span>
+                <span class="k">if</span> <span class="s1">&#39;Ganymede&#39;</span> <span class="ow">in</span> <span class="n">target_chilean</span><span class="p">[</span><span class="s1">&#39;Telescope&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]:</span>
+                    <span class="n">startup</span><span class="p">(</span><span class="n">target_chilean</span><span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">sun_set</span><span class="o">.</span><span class="n">iso</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">time_start</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">Path</span><span class="p">)</span>
+                    <span class="n">first_target</span><span class="p">(</span><span class="n">target_chilean</span><span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">time_start</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">time_end</span><span class="p">,</span> <span class="n">waitlimit</span><span class="p">,</span> <span class="n">afinterval</span><span class="p">,</span> <span class="n">autofocus</span><span class="p">,</span>
+                                 <span class="n">target_chilean</span><span class="p">[</span><span class="s1">&#39;Counts&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">target_chilean</span><span class="p">[</span><span class="s1">&#39;Filter&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">texp</span><span class="p">,</span>
+                                 <span class="n">coords</span><span class="o">.</span><span class="n">ra</span><span class="o">.</span><span class="n">hms</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">coords</span><span class="o">.</span><span class="n">ra</span><span class="o">.</span><span class="n">hms</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">coords</span><span class="o">.</span><span class="n">ra</span><span class="o">.</span><span class="n">hms</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">coords</span><span class="o">.</span><span class="n">dec</span><span class="o">.</span><span class="n">dms</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">coords</span><span class="o">.</span><span class="n">dec</span><span class="o">.</span><span class="n">dms</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+                                 <span class="n">coords</span><span class="o">.</span><span class="n">dec</span><span class="o">.</span><span class="n">dms</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">chain</span><span class="p">,</span> <span class="n">target_chilean</span><span class="p">[</span><span class="s1">&#39;Gaia_ID&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">Path</span><span class="p">)</span>
+                <span class="k">if</span> <span class="s1">&#39;Callisto&#39;</span> <span class="ow">in</span> <span class="n">target_chilean</span><span class="p">[</span><span class="s1">&#39;Telescope&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]:</span>
+                    <span class="n">startup</span><span class="p">(</span><span class="n">target_chilean</span><span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">sun_set</span><span class="o">.</span><span class="n">iso</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">time_start</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">Path</span><span class="p">)</span>
+                    <span class="n">first_target</span><span class="p">(</span> <span class="n">target_chilean</span><span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">time_start</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">time_end</span><span class="p">,</span> <span class="n">waitlimit</span><span class="p">,</span> <span class="n">afinterval</span><span class="p">,</span> <span class="n">autofocus</span><span class="p">,</span>
+                                 <span class="n">target_chilean</span><span class="p">[</span><span class="s1">&#39;Counts&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">target_chilean</span><span class="p">[</span><span class="s1">&#39;Filter&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">texp</span><span class="p">,</span>
+                                 <span class="n">coords</span><span class="o">.</span><span class="n">ra</span><span class="o">.</span><span class="n">hms</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">coords</span><span class="o">.</span><span class="n">ra</span><span class="o">.</span><span class="n">hms</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">coords</span><span class="o">.</span><span class="n">ra</span><span class="o">.</span><span class="n">hms</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">coords</span><span class="o">.</span><span class="n">dec</span><span class="o">.</span><span class="n">dms</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">coords</span><span class="o">.</span><span class="n">dec</span><span class="o">.</span><span class="n">dms</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+                                 <span class="n">coords</span><span class="o">.</span><span class="n">dec</span><span class="o">.</span><span class="n">dms</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">chain</span><span class="p">,</span> <span class="n">target_chilean</span><span class="p">[</span><span class="s1">&#39;Gaia_ID&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">Path</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">time_start</span> <span class="o">=</span> <span class="n">Time</span><span class="p">(</span><span class="n">target_chilean</span><span class="p">[</span><span class="s1">&#39;Start&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">])</span><span class="o">.</span><span class="n">iso</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">time_end</span> <span class="o">=</span> <span class="n">Time</span><span class="p">(</span><span class="n">target_chilean</span><span class="p">[</span><span class="s1">&#39;End&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">])</span><span class="o">.</span><span class="n">iso</span>
+
+                <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">target_chilean</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+                    <span class="n">first_target</span><span class="p">(</span><span class="n">target_chilean</span><span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">time_start</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">time_end</span><span class="p">,</span> <span class="n">waitlimit</span><span class="p">,</span> <span class="n">afinterval</span><span class="p">,</span> <span class="n">autofocus</span><span class="p">,</span>
+                                    <span class="n">target_chilean</span><span class="p">[</span><span class="s1">&#39;Counts&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">],</span> <span class="n">target_chilean</span><span class="p">[</span><span class="s1">&#39;Filter&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">],</span> <span class="n">texp</span><span class="p">,</span>
+                                    <span class="n">coords</span><span class="o">.</span><span class="n">ra</span><span class="o">.</span><span class="n">hms</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">coords</span><span class="o">.</span><span class="n">ra</span><span class="o">.</span><span class="n">hms</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">coords</span><span class="o">.</span><span class="n">ra</span><span class="o">.</span><span class="n">hms</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">coords</span><span class="o">.</span><span class="n">dec</span><span class="o">.</span><span class="n">dms</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">coords</span><span class="o">.</span><span class="n">dec</span><span class="o">.</span><span class="n">dms</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+                                    <span class="n">coords</span><span class="o">.</span><span class="n">dec</span><span class="o">.</span><span class="n">dms</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">target_chilean</span><span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">][</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">],</span><span class="n">target_chilean</span><span class="p">[</span><span class="s1">&#39;Gaia_ID&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">Path</span><span class="p">)</span>
+
+                <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">target_chilean</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
+                    <span class="n">first_target</span><span class="p">(</span><span class="n">target_chilean</span><span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">time_start</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">time_end</span><span class="p">,</span> <span class="n">waitlimit</span><span class="p">,</span> <span class="n">afinterval</span><span class="p">,</span> <span class="n">autofocus</span><span class="p">,</span>
+                                <span class="n">target_chilean</span><span class="p">[</span><span class="s1">&#39;Counts&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">],</span> <span class="n">target_chilean</span><span class="p">[</span><span class="s1">&#39;Filter&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">],</span><span class="n">texp</span><span class="p">,</span>
+                                <span class="n">coords</span><span class="o">.</span><span class="n">ra</span><span class="o">.</span><span class="n">hms</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">coords</span><span class="o">.</span><span class="n">ra</span><span class="o">.</span><span class="n">hms</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">coords</span><span class="o">.</span><span class="n">ra</span><span class="o">.</span><span class="n">hms</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">coords</span><span class="o">.</span><span class="n">dec</span><span class="o">.</span><span class="n">dms</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">coords</span><span class="o">.</span><span class="n">dec</span><span class="o">.</span><span class="n">dms</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+                                <span class="n">coords</span><span class="o">.</span><span class="n">dec</span><span class="o">.</span><span class="n">dms</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="kc">None</span><span class="p">,</span><span class="n">target_chilean</span><span class="p">[</span><span class="s1">&#39;Gaia_ID&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">Path</span><span class="p">)</span>
+
+            <span class="n">filters_used</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">target_chilean</span><span class="p">[</span><span class="s1">&#39;Filter&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">])</span>
+
+        <span class="k">if</span> <span class="s1">&#39;Io&#39;</span> <span class="ow">in</span> <span class="n">target_chilean</span><span class="p">[</span><span class="s1">&#39;Telescope&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]:</span>
+            <span class="n">flatexo_io</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Path</span><span class="p">,</span> <span class="n">filters_used</span><span class="p">,</span> <span class="n">nbu</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">nbHa</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">nbRc</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">nbz</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">nbr</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">nbi</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">nbg</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">nbIz</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span>
+                       <span class="n">nbExo</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">nbClear</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+        <span class="k">if</span> <span class="s1">&#39;Europa&#39;</span> <span class="ow">in</span> <span class="n">target_chilean</span><span class="p">[</span><span class="s1">&#39;Telescope&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]:</span>
+            <span class="n">flatexo_euro</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Path</span><span class="p">,</span> <span class="n">filters_used</span><span class="p">,</span> <span class="n">nbRc</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">nbB</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">nbz</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">nbV</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">nbr</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">nbi</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">nbg</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">nbIz</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span>
+                         <span class="n">nbExo</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">nbClear</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+        <span class="k">if</span> <span class="s1">&#39;Ganymede&#39;</span> <span class="ow">in</span> <span class="n">target_chilean</span><span class="p">[</span><span class="s1">&#39;Telescope&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]:</span>
+            <span class="n">flatexo_gany</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Path</span><span class="p">,</span> <span class="n">filters_used</span><span class="p">,</span> <span class="n">nbOIII</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">nbHa</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">nbSII</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">nbz</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">nbr</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">nbi</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">nbg</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">nbIz</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span>
+                         <span class="n">nbExo</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">nbClear</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+        <span class="k">if</span> <span class="s1">&#39;Callisto&#39;</span> <span class="ow">in</span> <span class="n">target_chilean</span><span class="p">[</span><span class="s1">&#39;Telescope&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]:</span>
+            <span class="n">flatexo_calli</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Path</span><span class="p">,</span> <span class="n">t_now</span><span class="p">,</span> <span class="n">filters_used</span><span class="p">,</span> <span class="n">nbu</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">nbB</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">nbz</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">nbV</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">nbr</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">nbi</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">nbg</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">nbIz</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span>
+                          <span class="n">nbExo</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">nbClear</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+
+        <span class="n">flatdawn</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">time_end</span><span class="p">,</span> <span class="n">sun_rise</span><span class="o">.</span><span class="n">iso</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">Path</span><span class="p">)</span>
+        <span class="n">biasdark</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Path</span><span class="p">)</span>
+        <span class="n">info_message</span> <span class="o">=</span><span class="s1">&#39;INFO: Plans made&#39;</span>
+        <span class="k">return</span> <span class="n">info_message</span></div>
+
+<div class="viewcode-block" id="chilean_time.check_plans"><a class="viewcode-back" href="../../content/api.html#SPOCK_chilean.make_night_plans.chilean_time.check_plans">[docs]</a>    <span class="k">def</span> <span class="nf">check_plans</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Check if plans meet constraints</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        info message</span>
+<span class="sd">            return message to inform if the plan are ok or not</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">target_name</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">for</span> <span class="n">rr</span><span class="p">,</span> <span class="n">dd</span><span class="p">,</span> <span class="n">ff</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Path</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">ff</span><span class="p">,</span> <span class="n">reverse</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">f</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;startup&#39;</span><span class="p">):</span>
+                    <span class="n">file_startup</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Path</span><span class="p">,</span> <span class="n">f</span><span class="p">),</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+                    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">file_startup</span><span class="p">:</span>
+                        <span class="k">if</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;#waituntil 1,&#39;</span><span class="p">):</span>
+                            <span class="bp">self</span><span class="o">.</span><span class="n">start_date</span> <span class="o">=</span> <span class="n">line</span><span class="p">[</span><span class="mi">14</span><span class="p">:]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+                            <span class="bp">self</span><span class="o">.</span><span class="n">start_date</span><span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_date</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">)</span>
+                            <span class="n">twilight_evening</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">observatory</span><span class="o">.</span><span class="n">twilight_evening_nautical</span><span class="p">(</span><span class="n">Time</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">start_date</span><span class="p">),</span> <span class="n">which</span><span class="o">=</span><span class="s1">&#39;nearest&#39;</span><span class="p">)</span>
+                            <span class="n">twilight_morning</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">observatory</span><span class="o">.</span><span class="n">twilight_morning_nautical</span><span class="p">(</span><span class="n">Time</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">start_date</span><span class="p">),</span> <span class="n">which</span><span class="o">=</span><span class="s1">&#39;next&#39;</span><span class="p">)</span>
+                            <span class="k">break</span>
+                <span class="k">elif</span> <span class="n">f</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;Obj_&#39;</span><span class="p">):</span>
+                    <span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Path</span><span class="p">,</span><span class="n">f</span><span class="p">),</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">time_start</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">time_end</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">target_name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>
+                        <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">file</span><span class="p">:</span>
+                            <span class="k">if</span> <span class="n">l</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;#waituntil 1,&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">time_start</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                                <span class="n">line_start</span> <span class="o">=</span> <span class="n">l</span>
+                                <span class="bp">self</span><span class="o">.</span><span class="n">time_start</span> <span class="o">=</span> <span class="n">line_start</span><span class="p">[</span><span class="mi">14</span><span class="p">:]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+                                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">time_start</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">7</span><span class="p">:</span>
+                                    <span class="bp">self</span><span class="o">.</span><span class="n">time_start</span> <span class="o">=</span> <span class="n">Time</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">time_start</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">))</span>
+                                <span class="k">else</span><span class="p">:</span>
+                                    <span class="bp">self</span><span class="o">.</span><span class="n">time_start</span> <span class="o">=</span> <span class="n">Time</span><span class="p">(</span><span class="n">Time</span><span class="p">((</span><span class="n">Time</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">start_date</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">iso</span><span class="p">,</span>
+                                                                <span class="n">out_subfmt</span><span class="o">=</span><span class="s1">&#39;date&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">value</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">time_start</span><span class="p">)</span>
+                            <span class="k">if</span> <span class="n">l</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;#quitat&#39;</span><span class="p">):</span>
+                                <span class="n">line_end</span> <span class="o">=</span> <span class="n">l</span>
+                                <span class="bp">self</span><span class="o">.</span><span class="n">time_end</span> <span class="o">=</span> <span class="n">line_end</span><span class="p">[</span><span class="mi">7</span><span class="p">:]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+                                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">time_end</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">7</span><span class="p">:</span>
+                                    <span class="bp">self</span><span class="o">.</span><span class="n">time_end</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">time_end</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">)</span>
+                                <span class="k">else</span><span class="p">:</span>
+                                    <span class="bp">self</span><span class="o">.</span><span class="n">time_end</span> <span class="o">=</span> <span class="n">Time</span><span class="p">(</span><span class="n">Time</span><span class="p">((</span><span class="n">Time</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">start_date</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">iso</span><span class="p">,</span><span class="n">out_subfmt</span><span class="o">=</span><span class="s1">&#39;date&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">value</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">time_end</span><span class="p">)</span>
+                            <span class="k">if</span> <span class="n">l</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;; Ch&#39;</span><span class="p">):</span>
+                                <span class="n">target_name</span> <span class="o">=</span> <span class="n">l</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+                    <span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Path</span><span class="p">,</span> <span class="n">f</span><span class="p">),</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+                    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">file</span><span class="p">:</span>
+                        <span class="k">if</span> <span class="n">line</span> <span class="o">==</span> <span class="s1">&#39;;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">:</span>
+                            <span class="k">pass</span>
+                        <span class="k">elif</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;; Ch&#39;</span><span class="p">):</span>
+                            <span class="n">target_name</span> <span class="o">=</span> <span class="n">line</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+                        <span class="k">elif</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;#filter&#39;</span><span class="p">):</span>
+                            <span class="n">filt</span> <span class="o">=</span> <span class="n">line</span><span class="p">[</span><span class="mi">8</span><span class="p">:]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+                            <span class="n">filt_accepted</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;I+z&#39;</span><span class="p">,</span><span class="s1">&#39;z</span><span class="se">\&#39;</span><span class="s1">&#39;</span><span class="p">,</span><span class="s1">&#39;i</span><span class="se">\&#39;</span><span class="s1">&#39;</span><span class="p">,</span><span class="s1">&#39;r</span><span class="se">\&#39;</span><span class="s1">&#39;</span><span class="p">,</span><span class="s1">&#39;i&#39;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="s1">&#39;z&#39;</span><span class="p">]</span>
+                            <span class="k">if</span> <span class="n">filt</span> <span class="ow">in</span> <span class="n">filt_accepted</span><span class="p">:</span>
+                                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;INFO: OK, filter chosen for &#39;</span><span class="o">+</span> <span class="n">target_name</span> <span class="o">+</span> <span class="s1">&#39; is in the list&#39;</span><span class="p">)</span>
+                            <span class="k">else</span><span class="p">:</span>
+                                <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="s1">&#39;ERROR: The filter chosen for target &#39;</span> <span class="o">+</span> <span class="n">target_name</span> <span class="o">+</span> <span class="s1">&#39; is NOT in the filters list (list is [I+z,z</span><span class="se">\&#39;</span><span class="s1">,i</span><span class="se">\&#39;</span><span class="s1">,r</span><span class="se">\&#39;</span><span class="s1">])&#39;</span><span class="p">)</span>
+
+                        <span class="k">elif</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;#interval&#39;</span><span class="p">):</span>
+                            <span class="n">texp</span> <span class="o">=</span> <span class="n">line</span><span class="p">[</span><span class="mi">9</span><span class="p">:]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+                            <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">texp</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+                                <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="s1">&#39;ERROR: The exposure time for target &#39;</span> <span class="o">+</span> <span class="n">target_name</span> <span class="o">+</span> <span class="s1">&#39; is &lt; 10s&#39;</span><span class="p">)</span>
+                            <span class="k">else</span><span class="p">:</span>
+                                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;INFO: OK, exposure time chosen for &#39;</span> <span class="o">+</span> <span class="n">target_name</span> <span class="o">+</span> <span class="s1">&#39; is &gt;10s&#39;</span><span class="p">)</span>
+
+                        <span class="k">elif</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">target_name</span><span class="p">):</span>
+                            <span class="n">coords_str</span> <span class="o">=</span> <span class="n">line</span><span class="p">[(</span><span class="nb">len</span><span class="p">(</span><span class="n">target_name</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">):]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+                            <span class="n">coords</span> <span class="o">=</span> <span class="n">SkyCoord</span><span class="p">(</span><span class="n">coords_str</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">hourangle</span><span class="p">,</span> <span class="n">u</span><span class="o">.</span><span class="n">deg</span><span class="p">))</span>
+
+                            <span class="k">if</span> <span class="n">coords</span><span class="o">.</span><span class="n">dec</span><span class="o">.</span><span class="n">deg</span> <span class="o">&gt;</span> <span class="mi">80</span><span class="p">:</span>
+                                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;WARNING: field &#39;</span> <span class="o">+</span> <span class="n">target_name</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\&#39;</span><span class="s1">s declination is above 80°, might have tracking issues&#39;</span><span class="p">)</span>
+                            <span class="n">time_range</span> <span class="o">=</span> <span class="p">[</span><span class="n">Time</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">time_start</span><span class="p">),</span> <span class="n">Time</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">time_end</span><span class="p">)]</span>
+                            <span class="n">target</span> <span class="o">=</span> <span class="n">FixedTarget</span><span class="p">(</span><span class="n">coord</span><span class="o">=</span><span class="n">SkyCoord</span><span class="p">(</span><span class="n">ra</span><span class="o">=</span><span class="n">coords</span><span class="o">.</span><span class="n">ra</span><span class="o">.</span><span class="n">deg</span><span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">degree</span><span class="p">,</span><span class="n">dec</span><span class="o">=</span><span class="n">coords</span><span class="o">.</span><span class="n">dec</span><span class="o">.</span><span class="n">deg</span><span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">degree</span><span class="p">),</span><span class="n">name</span><span class="o">=</span><span class="n">target_name</span><span class="p">)</span>
+                            <span class="n">constraint_elevation</span> <span class="o">=</span> <span class="p">[</span><span class="n">AltitudeConstraint</span><span class="p">(</span><span class="nb">min</span><span class="o">=</span><span class="mi">24</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">deg</span><span class="p">),</span><span class="n">AtNightConstraint</span><span class="o">.</span><span class="n">twilight_nautical</span><span class="p">()]</span>  <span class="c1">#</span>
+                            <span class="n">constraint_moon</span> <span class="o">=</span> <span class="p">[</span> <span class="n">MoonSeparationConstraint</span><span class="p">(</span><span class="nb">min</span><span class="o">=</span><span class="mi">20</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">deg</span><span class="p">),</span><span class="n">AtNightConstraint</span><span class="o">.</span><span class="n">twilight_nautical</span><span class="p">()]</span>
+                            <span class="n">observable_elevation</span> <span class="o">=</span> <span class="n">is_always_observable</span><span class="p">(</span><span class="n">constraint_elevation</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">observatory</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">time_range</span><span class="o">=</span><span class="n">time_range</span><span class="p">)</span>
+                            <span class="n">observable_moon</span> <span class="o">=</span> <span class="n">is_observable</span><span class="p">(</span><span class="n">constraint_moon</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">observatory</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span><span class="n">time_range</span><span class="o">=</span><span class="n">time_range</span><span class="p">)</span>
+
+                            <span class="k">if</span> <span class="n">observable_elevation</span><span class="p">:</span>
+                                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;INFO: OK, field &#39;</span> <span class="o">+</span> <span class="n">target_name</span> <span class="o">+</span>  <span class="s1">&#39; respects the elevation constraint&#39;</span><span class="p">)</span>
+                            <span class="k">if</span> <span class="ow">not</span> <span class="n">observable_elevation</span><span class="p">:</span>
+                                <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="s1">&#39;ERROR: field &#39;</span> <span class="o">+</span> <span class="n">target_name</span> <span class="o">+</span>  <span class="s1">&#39; does NOT respect the constraint of elevation (&lt;23°)&#39;</span><span class="p">)</span>
+                            <span class="k">if</span> <span class="n">observable_moon</span><span class="p">:</span>
+                                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;INFO: OK, field &#39;</span> <span class="o">+</span> <span class="n">target_name</span> <span class="o">+</span>  <span class="s1">&#39; respects the moon constraint&#39;</span><span class="p">)</span>
+                            <span class="k">if</span> <span class="ow">not</span> <span class="n">observable_moon</span><span class="p">:</span>
+                                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;WARNING: field &#39;</span> <span class="o">+</span> <span class="n">target_name</span> <span class="o">+</span> <span class="s1">&#39; does NOT respect the moon separartion angle (&gt;20°)&#39;</span><span class="p">)</span>
+                            <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">coords</span><span class="o">.</span><span class="n">dec</span><span class="o">.</span><span class="n">deg</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">80</span><span class="p">:</span>
+                                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;WARNING: field &#39;</span> <span class="o">+</span> <span class="n">target_name</span> <span class="o">+</span> <span class="s1">&#39; is very close to polar (&gt;80) qulity will be worst than usual&#39;</span><span class="p">)</span>
+
+                            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">time_end</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">time_start</span><span class="p">:</span>
+                                <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="s1">&#39;WARNING: Start time of field &#39;</span> <span class="o">+</span> <span class="n">target_name</span> <span class="o">+</span> <span class="s1">&#39; is &gt; to end time&#39;</span><span class="p">)</span>
+                            <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">time_start</span> <span class="o">&lt;</span> <span class="n">twilight_evening</span><span class="p">:</span>
+                                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;WARNING: Start time of field &#39;</span> <span class="o">+</span> <span class="n">target_name</span> <span class="o">+</span> <span class="s1">&#39; is &lt; to nautical evening twilight !&#39;</span><span class="p">)</span>
+                            <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">time_end</span> <span class="o">&gt;</span> <span class="n">twilight_morning</span><span class="p">:</span>
+                                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;WARNING: End time of field &#39;</span> <span class="o">+</span> <span class="n">target_name</span> <span class="o">+</span> <span class="s1">&#39; is &gt; to nautical morning twilight !&#39;</span><span class="p">)</span>
+                            <span class="k">elif</span> <span class="p">(</span><span class="n">Time</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">time_end</span><span class="p">)</span><span class="o">.</span><span class="n">jd</span> <span class="o">-</span> <span class="n">Time</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">time_start</span><span class="p">)</span><span class="o">.</span><span class="n">jd</span><span class="p">)</span><span class="o">*</span><span class="mi">24</span><span class="o">*</span><span class="mi">60</span> <span class="o">&lt;</span> <span class="mi">15</span><span class="p">:</span>
+                                <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="s1">&#39;ERROR: You can NOT schedule field &#39;</span> <span class="o">+</span> <span class="n">target_name</span> <span class="o">+</span> <span class="s1">&#39; for less than 15 min&#39;</span><span class="p">)</span>
+                            <span class="k">else</span><span class="p">:</span>
+                                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;INFO: Ok, field &#39;</span> <span class="o">+</span> <span class="n">target_name</span> <span class="o">+</span> <span class="s1">&#39; is scheduled for more than 15 min&#39;</span><span class="p">)</span>
+                            <span class="bp">self</span><span class="o">.</span><span class="n">check_distance_speculoos_targets</span><span class="p">(</span><span class="n">coords</span><span class="o">.</span><span class="n">ra</span><span class="p">,</span> <span class="n">coords</span><span class="o">.</span><span class="n">dec</span><span class="p">,</span> <span class="n">target_name</span><span class="p">)</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;INFO: Check completed, plans are OK&#39;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="chilean_time.etc_chilean"><a class="viewcode-back" href="../../content/api.html#SPOCK_chilean.make_night_plans.chilean_time.etc_chilean">[docs]</a>    <span class="k">def</span> <span class="nf">etc_chilean</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">Jmag</span><span class="p">,</span><span class="n">SpT</span><span class="p">,</span><span class="n">Filter</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Return the optimized exposure time for the target</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        Jmag : float</span>
+<span class="sd">            magnitude in J</span>
+<span class="sd">        SpT : str</span>
+<span class="sd">            spectral type of the target</span>
+<span class="sd">        Filter : str</span>
+<span class="sd">            filter used</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        texp  : float</span>
+<span class="sd">            exposure time</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">moon_phase</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">moon_illumination</span><span class="p">(</span><span class="n">Time</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">start_date</span><span class="p">)),</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="n">ETC</span><span class="o">.</span><span class="n">etc</span><span class="p">(</span><span class="n">mag_val</span><span class="o">=</span><span class="n">Jmag</span><span class="p">,</span> <span class="n">mag_band</span><span class="o">=</span><span class="s1">&#39;J&#39;</span><span class="p">,</span> <span class="n">spt</span><span class="o">=</span><span class="n">SpT</span><span class="p">,</span> \
+                    <span class="n">filt</span><span class="o">=</span><span class="n">Filter</span><span class="p">,</span> <span class="n">airmass</span><span class="o">=</span><span class="mf">1.1</span><span class="p">,</span> <span class="n">moonphase</span><span class="o">=</span><span class="n">moon_phase</span><span class="p">,</span> <span class="n">irtf</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> \
+                    <span class="n">num_tel</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">seeing</span><span class="o">=</span><span class="mf">0.95</span><span class="p">,</span> <span class="n">gain</span><span class="o">=</span><span class="mf">1.1</span><span class="p">)</span>
+        <span class="n">texp</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">exp_time_calculator</span><span class="p">(</span><span class="n">ADUpeak</span><span class="o">=</span><span class="mi">30000</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">texp</span></div>
+
+<div class="viewcode-block" id="chilean_time.check_distance_speculoos_targets"><a class="viewcode-back" href="../../content/api.html#SPOCK_chilean.make_night_plans.chilean_time.check_distance_speculoos_targets">[docs]</a>    <span class="k">def</span> <span class="nf">check_distance_speculoos_targets</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">ra</span><span class="p">,</span><span class="n">dec</span><span class="p">,</span><span class="n">target_name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; check if target is not in SPECULOOS target list</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        ra : float</span>
+<span class="sd">            right ascension (degrees)</span>
+<span class="sd">        dec : float</span>
+<span class="sd">            declinaison (degrees)</span>
+<span class="sd">        target_name : str</span>
+<span class="sd">            name of the target</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        info message</span>
+<span class="sd">            state whether there is a SPECULOOS target in the field or not</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">catalog_data</span> <span class="o">=</span> <span class="n">Catalogs</span><span class="o">.</span><span class="n">query_object</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">ra</span><span class="p">)</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">dec</span><span class="p">),</span> <span class="n">radius</span><span class="o">=</span><span class="mi">6</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">arcminute</span><span class="p">,</span> <span class="n">catalog</span><span class="o">=</span><span class="s2">&quot;Gaia&quot;</span><span class="p">)</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;./SPOCK_chilean/speculoos_target_list_chilean_nights.txt&#39;</span><span class="p">,</span><span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+        <span class="n">idx_speculoos_found</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">catalog_data</span><span class="p">[</span><span class="s1">&#39;designation&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Gaia DR2 &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">gaia_id</span><span class="p">)))</span> <span class="k">for</span> <span class="n">gaia_id</span> <span class="ow">in</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Gaia_ID&#39;</span><span class="p">]]</span>
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">idx_speculoos_found</span><span class="p">):</span>
+            <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="s1">&#39;ERROR: There is a SPECULOOS target in this field, please change your coordinates&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;INFO: OK, field &#39;</span> <span class="o">+</span> <span class="n">target_name</span> <span class="o">+</span> <span class="s1">&#39; does not contain a SPECULOOS target&#39;</span><span class="p">)</span></div></div>
+
+
+
+
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Elsa Ducrot
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-XXXXXXX-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+
+    
+   
+
+</body>
+</html>

@@ -1,7 +1,7 @@
 .. _exampleapp:
 
 Application
-=========
+================
 
 |SPOCK_chilean| has an app !
 
@@ -12,7 +12,7 @@ And click on ``run all cells`` to launch.
 If you prefer to use python script instead of Jupyter app go to :ref:`Python use <pythontuto>`
 
 Make new plans
-----------
+--------------------
 
 First, you must fill the required fields:
 
@@ -40,7 +40,7 @@ To estimate the most appropriate exposure time you can press the ``ETC SPECULOOS
    :align: center
 
 Check existing plans
-----------
+------------------------------
 
 To check if the plans for a given nights are correct (respect the constraint imposed in the contrat) you can use the plan checker.
 Just enter the date ou wish to check using the calendar and press the ``Check plans` orange button.

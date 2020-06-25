@@ -2,8 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3b58c3b0-27c9-44fe-978e-a55140a5e06a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/docs/source/examples/SPOCK_chilean_nights/exampleapp.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/source/examples/SPOCK_chilean_nights/exampleapp.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/source/examples/SPOCK_chilean_nights/pythontuto.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/source/examples/SPOCK_chilean_nights/pythontuto.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chilean_SPOCKapp.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Chilean_SPOCKapp.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2020-06-25/Cal_flatdawn.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Plans_by_date/2020-06-25/Cal_flatdawn.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2020-06-25/Obj_Ch3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Plans_by_date/2020-06-25/Obj_Ch3.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2020-06-25/startup.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Plans_by_date/2020-06-25/startup.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SPOCK_chilean/speculoos_target_list_v6.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/.doctrees/api/SPOCK_chilean_nights.ETC.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doc/build/.doctrees/api/SPOCK_chilean_nights.ETC.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/.doctrees/api/SPOCK_chilean_nights.make_night_plans.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doc/build/.doctrees/api/SPOCK_chilean_nights.make_night_plans.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/.doctrees/api/SPOCK_chilean_nights.test_txtfiles.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doc/build/.doctrees/api/SPOCK_chilean_nights.test_txtfiles.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/.doctrees/content/quick-ref.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doc/build/.doctrees/content/quick-ref.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/.doctrees/examples/SPOCK_chilean_nights/exampleapp.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doc/build/.doctrees/examples/SPOCK_chilean_nights/exampleapp.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/source/api/SPOCK_chilean_nights.ETC.rst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/source/api/SPOCK_chilean_nights.make_night_plans.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/source/api/SPOCK_chilean.make_night_plans.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/source/api/SPOCK_chilean_nights.test_txtfiles.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/source/api/SPOCK_chilean.test_txtfiles.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/source/conf.py" beforeDir="false" afterPath="$PROJECT_DIR$/docs/source/conf.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/source/content/quick-ref.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/source/content/quick-ref.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/source/examples/SPOCK_chilean_nights/etc.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/source/examples/SPOCK_chilean/etc.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/source/examples/SPOCK_chilean_nights/exampleapp.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/source/examples/SPOCK_chilean/exampleapp.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/source/examples/SPOCK_chilean_nights/go_to_plan_button.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/source/examples/SPOCK_chilean/go_to_plan_button.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/source/examples/SPOCK_chilean_nights/options.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/source/examples/SPOCK_chilean/options.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/source/examples/SPOCK_chilean_nights/plan_check.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/source/examples/SPOCK_chilean/plan_check.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/source/examples/SPOCK_chilean_nights/plan_maker.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/source/examples/SPOCK_chilean/plan_maker.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/source/examples/SPOCK_chilean_nights/pythontuto.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/source/examples/SPOCK_chilean/pythontuto.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/source/examples/SPOCK_chilean_nights/required.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/source/examples/SPOCK_chilean/required.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/source/examples/SPOCK_chilean_nights/run.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/docs/source/examples/SPOCK_chilean/run.ipynb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

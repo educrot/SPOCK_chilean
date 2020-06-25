@@ -1,4 +1,4 @@
-SPOCK\_chilean\_nights.txt\_files
+SPOCK\_chilean.txt\_files
 ===========================
 
 .. automodule:: SPOCK_chilean.txt_files
