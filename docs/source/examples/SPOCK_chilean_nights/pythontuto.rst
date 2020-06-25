@@ -3,7 +3,7 @@
 Python use
 =========
 
-In this tutorial you will learn how to use |SPOCK_chilean_nights| to create and check ACP plans for SSO observations
+In this tutorial you will learn how to use |SPOCK_chilean| to create and check ACP plans for SSO observations
 
 Create and Check plans
 ^^^^^^^^^^^^^^^^^
@@ -13,7 +13,7 @@ Create and Check plans
     import ipywidgets as w
     from IPython.display import display
     import pandas as pd
-    from SPOCK_chilean_nights.make_night_plans import chilean_time
+    from SPOCK_chilean.make_night_plans import chilean_time
 
     # set in advance with the planning with SSO team
     telescope = 'Ganymede'

@@ -1,0 +1,22 @@
+;
+; Ch3
+;
+; gaia_id
+;
+#waituntil 1, 2020/06/26 03:00:00
+#domeopen
+#chill -60
+#waitinlimits 600
+#nopreview 
+;#afinterval 60
+;#autofocus 
+#count 5000
+#binning 1
+#filter I+z
+#interval 23
+#TAG Donuts=on
+Ch3	23 04 00.00	-05 02 24.00
+;
+#quitat 04:00
+#chain Cal_flatdawn.txt
+;

@@ -3,7 +3,7 @@
 Application
 =========
 
-|SPOCK_chilean_nights| has an app !
+|SPOCK_chilean| has an app !
 
 To run it open this notebook : `SPOCK_chilean_app <file:///Users/elsaducrot/code/SPOCK_chilean/Chilean_SPOCKapp.html>`_.
 
