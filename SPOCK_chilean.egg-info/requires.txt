@@ -8,3 +8,4 @@ datetime
 pyaml
 docx
 plotly
+scipy
