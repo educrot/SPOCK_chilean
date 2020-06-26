@@ -3,11 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="3b58c3b0-27c9-44fe-978e-a55140a5e06a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chilean_SPOCKapp.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Chilean_SPOCKapp.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.rst" beforeDir="false" afterPath="$PROJECT_DIR$/README.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SPOCK_chilean/make_night_plans.py" beforeDir="false" afterPath="$PROJECT_DIR$/SPOCK_chilean/make_night_plans.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/source/examples/SPOCK_chilean/pythontuto.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/source/examples/SPOCK_chilean/pythontuto.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

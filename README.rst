@@ -15,9 +15,9 @@ of the solar neighborhood `Link to site <https://www.speculoos.uliege.be/cms/c_4
 Documentation SPOCK_chilean
 -----------------------------
 
-You will find complete documentation for setting up your project at `SPOCK documentation site`_.
+You will find complete documentation for setting up your project at `SPOCK chilean documentation site`_.
 
-.. _SPOCK documentation site : https://educrot.github.io/SPOCK_chilean/index.html
+.. _SPOCK chilean documentation site : https://educrot.github.io/SPOCK_chilean/index.html
 
 
 Installation
