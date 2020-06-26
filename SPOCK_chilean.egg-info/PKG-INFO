@@ -35,7 +35,7 @@ Description: .. image:: https://travis-ci.com/educrot/SPOCK_chilean.svg?branch=m
         
             git clone https://github.com/educrot/SPOCK_chilean.git
         
-            cd spock
+            cd spock_chilean
         
             python setup.py install
         
@@ -49,5 +49,5 @@ Description: .. image:: https://travis-ci.com/educrot/SPOCK_chilean.svg?branch=m
         License
         ---------------------
         
-        <span style=“color:red;”> text </span>
+        <span style=“color:red;”> TO ADD </span>
 Platform: UNKNOWN

@@ -3,10 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="3b58c3b0-27c9-44fe-978e-a55140a5e06a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SPOCK_chilean.egg-info/PKG-INFO" beforeDir="false" afterPath="$PROJECT_DIR$/SPOCK_chilean.egg-info/PKG-INFO" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SPOCK_chilean.egg-info/SOURCES.txt" beforeDir="false" afterPath="$PROJECT_DIR$/SPOCK_chilean.egg-info/SOURCES.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SPOCK_chilean.egg-info/requires.txt" beforeDir="false" afterPath="$PROJECT_DIR$/SPOCK_chilean.egg-info/requires.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/SPOCK_chilean-0.0.0-py3.7.egg" beforeDir="false" afterPath="$PROJECT_DIR$/dist/SPOCK_chilean-0.0.0-py3.7.egg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.rst" beforeDir="false" afterPath="$PROJECT_DIR$/README.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

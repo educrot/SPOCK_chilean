@@ -27,7 +27,7 @@ Use the package manager [git clone]() to install SPOCK::
 
     git clone https://github.com/educrot/SPOCK_chilean.git
 
-    cd spock
+    cd spock_chilean
 
     python setup.py install
 
@@ -41,4 +41,4 @@ Suggestions are welcome and feel free to open an issue if you see a bug.
 License
 ---------------------
 
-<span style=“color:red;”> text </span>
+<span style=“color:red;”> TO ADD </span>
