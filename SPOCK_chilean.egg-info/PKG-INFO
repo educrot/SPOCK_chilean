@@ -6,7 +6,10 @@ Home-page: https://github.com/educrot/SPOCK_chilean/
 Author: Elsa Ducrot
 Author-email: educrot@uliege.be
 License: UNKNOWN
-Description: .. image:: https://img.shields.io/badge/docs-dev-blue.svg
+Description: .. image:: https://travis-ci.com/educrot/SPOCK_chilean.svg?branch=master
+            :target: https://travis-ci.com/educrot/SPOCK_chilean
+        
+        .. image:: https://img.shields.io/badge/docs-dev-green.svg
             :target: https://educrot.github.io/SPOCK_chilean/index.html
         
         
@@ -20,9 +23,9 @@ Description: .. image:: https://img.shields.io/badge/docs-dev-blue.svg
         Documentation SPOCK_chilean
         -----------------------------
         
-        You will find complete documentation for setting up your project at `SPOCK documentation site`_.
+        You will find complete documentation for setting up your project at `SPOCK chilean documentation site`_.
         
-        .. _SPOCK documentation site : https://educrot.github.io/SPOCK_chilean/index.html
+        .. _SPOCK chilean documentation site : https://educrot.github.io/SPOCK_chilean/index.html
         
         
         Installation
@@ -30,7 +33,7 @@ Description: .. image:: https://img.shields.io/badge/docs-dev-blue.svg
         
         Use the package manager [git clone]() to install SPOCK::
         
-            git clone http://speculoos7.astro.ulg.ac.be/gitlab/eDucrot/spock_chilean.git
+            git clone https://github.com/educrot/SPOCK_chilean.git
         
             cd spock
         
