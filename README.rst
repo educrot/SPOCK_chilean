@@ -23,7 +23,7 @@ You will find complete documentation for setting up your project at `SPOCK chile
 Installation
 ---------------------
 
-Use the package manager [git clone]() to install SPOCK::
+Use the package manager [git clone]() to install SPOCK_chilean::
 
     git clone https://github.com/educrot/SPOCK_chilean.git
 
