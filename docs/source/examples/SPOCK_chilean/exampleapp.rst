@@ -3,7 +3,7 @@
 Application
 ================
 
-|SPOCK_chilean| has an app !
+SPOCK_chilean has an app !
 
 To run it open this notebook : `SPOCK_chilean_app <file:///Users/elsaducrot/code/SPOCK_chilean/Chilean_SPOCKapp.html>`_.
 
@@ -30,6 +30,9 @@ When done you can click on the **go to plans maker** button.
    :align: center
 
 This open the ``Plan maker`` tab. Fill in the information on each of your targets.
+.. warning::
+    The name of your targets should start with "Ch".
+
 
 .. image:: plan_maker.png
    :align: center
@@ -43,7 +46,7 @@ Check existing plans
 ------------------------------
 
 To check if the plans for a given nights are correct (respect the constraint imposed in the contrat) you can use the plan checker.
-Just enter the date ou wish to check using the calendar and press the ``Check plans` orange button.
+Just enter the date ou wish to check using the calendar and press the ``Check plans`` orange button.
 
 .. image:: plan_check.png
    :align: center

@@ -15,7 +15,7 @@ of the solar neighborhood `Link to site <https://www.speculoos.uliege.be/cms/c_4
 Documentation SPOCK_chilean
 -----------------------------
 
-You will find complete documentation for setting up your project at `SPOCK chilean documentation site`_.
+You will find complete documentation on the `SPOCK chilean documentation site`_.
 
 .. _SPOCK chilean documentation site : https://educrot.github.io/SPOCK_chilean/index.html
 
@@ -38,7 +38,3 @@ Contributing
 Suggestions are welcome and feel free to open an issue if you see a bug.
 
 
-License
----------------------
-
-<span style=“color:red;”> TO ADD </span>
