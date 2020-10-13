@@ -14,6 +14,9 @@ import pandas as pd
 import SPOCK_chilean.ETC as ETC
 from SPOCK_chilean.txt_files import startup, flatexo_gany, flatexo_io, flatexo_euro, flatexo_calli
 from SPOCK_chilean.txt_files import first_target, flatdawn, biasdark
+from astropy.table import Table,QTable
+from astropy.time import Time
+from astropy import units as u
 from astropy.utils import iers
 #iers.IERS_A_URL  ='ftp://cddis.gsfc.nasa.gov/pub/products/iers/finals2000A.all'
 #from astroplan import download_IERS_A
@@ -160,6 +163,7 @@ class chilean_time:
             return message to inform if the plan are ok or not
 
         """
+        check_ok = False
         target_name = None
         for rr, dd, ff in os.walk(self.Path):
             for f in sorted(ff, reverse = True):
@@ -249,9 +253,14 @@ class chilean_time:
                                 sys.exit('ERROR: You can NOT schedule field ' + target_name + ' for less than 15 min')
                             else:
                                 print('INFO: Ok, field ' + target_name + ' is scheduled for more than 15 min')
-                            self.check_distance_speculoos_targets(coords.ra, coords.dec, target_name)
+                            if self.check_distance_speculoos_targets(coords.ra, coords.dec, target_name):
+                                check_ok = True
 
-        print('INFO: Check completed, plans are OK')
+        if check_ok:
+            print('INFO: Check completed, plans are OK')
+        else:
+            print('ERROR: Problem in the plans')
+        return check_ok
 
     def etc_chilean(self,Jmag,SpT,Filter):
         """ Return the optimized exposure time for the target
@@ -297,7 +306,7 @@ class chilean_time:
             state whether there is a SPECULOOS target in the field or not
 
         """
-
+        check_ok = False
         catalog_data = Catalogs.query_object(str(ra) + str(dec), radius=6*np.sqrt(2) * u.arcminute, catalog="Gaia")
         df = pd.read_csv('./SPOCK_chilean/speculoos_target_list_chilean_nights.txt',delimiter=' ')
         idx_speculoos_found = [np.where((catalog_data['designation'] == 'Gaia DR2 ' + str(gaia_id))) for gaia_id in df['Gaia_ID']]
@@ -305,7 +314,37 @@ class chilean_time:
             sys.exit('ERROR: There is a SPECULOOS target in this field, please change your coordinates')
         else:
             print('INFO: OK, field ' + target_name + ' does not contain a SPECULOOS target')
+            check_ok = True
+        return check_ok
 
+def save_night_blocks(target_chilean,date,telescope):
+    durations =[]
+    configurations= []
+    ra1s  = []
+    ra2s  = []
+    ra3s  = []
+    dec1s = []
+    dec2s = []
+    dec3s = []
 
+    for i in range(len(target_chilean)):
+        durations.append((Time(target_chilean['End'][i]).jd - Time(target_chilean['Start'][i]).jd)*24*60)
+        configurations.append('{\'filt=' + str(target_chilean['Filter'][i]) + '\''
+                             + ', ' + '\'texp=' + str(target_chilean['texp'][i]) + '\'}')
+        coords = SkyCoord(ra=target_chilean['RA'][i] * u.deg, dec=target_chilean['DEC'][i] * u.deg)
+        ra1s.append(coords.ra.hms[0])
+        ra2s.append(coords.ra.hms[1])
+        ra3s.append(coords.ra.hms[2])
+        dec1s.append(coords.dec.hms[0])
+        dec2s.append(coords.dec.hms[1])
+        dec3s.append(coords.dec.hms[2])
 
+    df = pd.DataFrame({"target":target_chilean['Name'], "start time (UTC)":target_chilean['Start'],
+                       "end time (UTC)":target_chilean['End'], "duration (minutes)":durations,
+                       "ra (h)":ra1s, "ra (m)":ra2s, "ra (s)":ra3s, "dec (d)":dec1s, "dec (m)":dec2s,
+                       "dec (s)":dec3s, "configuration":configurations})
+
+    df.to_csv(os.path.join('./Archive_night_blocks_chilean/night_blocks_' +
+            telescope + '_' +  Time(date,format='datetime',out_subfmt='date').iso + '.txt'),sep=' ',index=None)
+    print('INFO: night blocks were saved')
 

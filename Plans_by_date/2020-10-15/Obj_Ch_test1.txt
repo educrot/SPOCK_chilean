@@ -1,9 +1,9 @@
 ;
-; Ch_elsa
+; Ch_test1
 ;
 ; gaia_id
 ;
-#waituntil 1, 2020/10/03 03:00:00
+#waituntil 1, 2020/10/16 00:00:00
 #domeopen
 #chill -60
 #waitinlimits 600
@@ -15,8 +15,8 @@
 #filter I+z
 #interval 20
 #TAG Donuts=on
-Ch_elsa	00 21 00.77	-16 07 28.61
+Ch_test1	00 21 00.77	-16 11 60.00
 ;
-#quitat 06:00
+#quitat 04:00
 #chain Cal_flatdawn.txt
 ;

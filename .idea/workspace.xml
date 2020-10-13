@@ -5,9 +5,12 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.ipynb_checkpoints/Chilean_SPOCKapp-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/.ipynb_checkpoints/Chilean_SPOCKapp-checkpoint.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Chilean_SPOCKapp.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Chilean_SPOCKapp.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/source/content/quick-ref.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/source/content/quick-ref.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/source/examples/SPOCK_chilean/exampleapp.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/source/examples/SPOCK_chilean/exampleapp.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/source/examples/SPOCK_chilean/pythontuto.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/source/examples/SPOCK_chilean/pythontuto.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2020-10-02/Cal_flatdawn.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Plans_by_date/2020-10-02/Cal_flatdawn.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2020-10-02/Cal_flatexo.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2020-10-02/Obj_Ch_elsa.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2020-10-02/startup.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SPOCK_chilean/make_night_plans.py" beforeDir="false" afterPath="$PROJECT_DIR$/SPOCK_chilean/make_night_plans.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
