@@ -1,0 +1,2 @@
+target "start time (UTC)" "end time (UTC)" "duration (minutes)" "ra (h)" "ra (m)" "ra (s)" "dec (d)" "dec (m)" "dec (s)" configuration
+Ch_44 "2021-04-10 05:00:00.000" "2021-04-10 08:00:00.000" 180.0 16.0 32.0 5.9685589803848416e-12 -4.0 -32.0 -2.5579538487363607e-12 "{'filt=z', 'texp=20'}"

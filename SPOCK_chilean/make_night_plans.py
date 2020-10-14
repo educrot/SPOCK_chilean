@@ -346,5 +346,24 @@ def save_night_blocks(target_chilean,date,telescope):
 
     df.to_csv(os.path.join('./Archive_night_blocks_chilean/night_blocks_' +
             telescope + '_' +  Time(date,format='datetime',out_subfmt='date').iso + '.txt'),sep=' ',index=None)
-    print('INFO: night blocks were saved')
+    #print('INFO: night blocks were saved')
 
+def available_dates_telescopes(df):
+    available_dates = []
+    available_telescopes = []
+    for i in range(len(df)):
+        if np.any(df.values[i] == 1):
+            available_dates.append(df.values[i][0].strftime('%Y-%m-%d'))
+            if df.values[i][1] == 1:
+                telescope = 'Io'
+                available_telescopes.append(telescope)
+            if df.values[i][2] == 1:
+                telescope = 'Europa'
+                available_telescopes.append(telescope)
+            if df.values[i][3] == 1:
+                telescope = 'Ganymede'
+                available_telescopes.append(telescope)
+            if df.values[i][4] == 1:
+                telescope = 'Callisto'
+                available_telescopes.append(telescope)
+    return available_dates,available_telescopes
