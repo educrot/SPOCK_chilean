@@ -3,7 +3,7 @@ API
 ***
 
 The SPOCK\_chilean API reference
-=============================
+==================================
 
 .. automodule:: SPOCK_chilean
    :members:

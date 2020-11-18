@@ -30,7 +30,7 @@ SPOCK_chilean :py:class:`~SPOCK_chilean.make_night_plans.chilean_time` class hol
 Functions to write text files
 ------------------------------
 
-SPOCK_chilean :py:class:`~SPOCK_chilean.make_night_plans.txt_files` class holds methods:
+SPOCK_chilean :py:class:`~SPOCK_chilean.txt_files` class holds methods:
 
 
 .. currentmodule:: SPOCK_chilean.txt_files
