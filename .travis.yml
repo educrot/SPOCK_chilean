@@ -18,5 +18,5 @@ deploy:
   github_token: $GITHUB_TAKEN  # Set in travis-ci.org dashboard, marked secure
   keep-history: true
   on:
-    branch: master
+    branch: gh-pages
   local_dir: docs/source/
