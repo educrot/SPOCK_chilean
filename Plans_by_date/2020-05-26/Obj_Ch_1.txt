@@ -18,5 +18,5 @@
 Ch_1	12 07 26.64	-52 47 18.91
 ;
 #quitat 03:00
-#chain Obj_Ch_2.txt
+#chain Cal_flatdawn.txt
 ;
