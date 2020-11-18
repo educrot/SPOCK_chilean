@@ -30,6 +30,7 @@ When done you can click on the **go to plans maker** button.
    :align: center
 
 This open the ``Plan maker`` tab. Fill in the information on each of your targets.
+
 .. warning::
     The name of your targets should start with "Ch".
 
