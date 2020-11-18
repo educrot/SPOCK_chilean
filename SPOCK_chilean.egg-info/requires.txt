@@ -10,3 +10,4 @@ docx
 plotly
 scipy
 xlrd
+python-docs

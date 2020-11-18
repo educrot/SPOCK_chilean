@@ -183,6 +183,8 @@ SPOCK_chilean/files_ETC/__pycache__/ETC.cpython-37.pyc
 __pycache__/ETC.cpython-37.pyc
 __pycache__/make_night_plans.cpython-37.pyc
 __pycache__/test_txtfiles.cpython-37.pyc
+dist/SPOCK_chilean-0.0.0-py3-none-any.whl
+dist/SPOCK_chilean-0.0.0.tar.gz
 doc/.DS_Store
 doc/build/.DS_Store
 doc/build/.buildinfo
