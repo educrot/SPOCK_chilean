@@ -9,4 +9,4 @@ pyaml
 docx
 plotly
 scipy
-xlrd
+xlrd==1.2.0
