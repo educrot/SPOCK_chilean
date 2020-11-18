@@ -1,0 +1,12 @@
+pandas
+numpy==1.19.0
+astroquery
+astroplan
+astropy
+matplotlib
+datetime
+pyaml
+docx
+plotly
+scipy
+xlrd
