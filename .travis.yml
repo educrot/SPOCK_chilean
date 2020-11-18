@@ -13,9 +13,10 @@ script:
   - travis-sphinx build -n
 
 deploy:
-  - provider: pages:git
-    verbose: true
-    token: $GITHUB_TOKEN
-    edge: true
-    local_dir: ./docs/source/
-    keep_history: true
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TAKEN  # Set in travis-ci.org dashboard, marked secure
+  keep-history: true
+  on:
+    branch: gh-pages
+  local_dir: docs/source/
