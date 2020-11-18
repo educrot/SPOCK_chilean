@@ -1,6 +1,10 @@
 .. _installation:
 
 
+.. warning::
+    Python version >= 3.6 is required !
+
+
 Installation
 ============
 
