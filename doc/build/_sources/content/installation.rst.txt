@@ -21,6 +21,3 @@ Install *SPOCK* locally::
 
     python setup.py install
 
-Or via **pip**::
-
-    pip install -i https://test.pypi.org/simple/ SPOCK-chilean==0.0.0

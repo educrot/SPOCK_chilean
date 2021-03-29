@@ -39,15 +39,6 @@ Description: .. image:: https://travis-ci.com/educrot/SPOCK_chilean.svg?token=Jy
         
             python setup.py install
         
-        Or via pip::
-        
-            pip install -i https://test.pypi.org/simple/ SPOCK-chilean==0.0.0
-        
-        
-        Contributing
-        ---------------------
-        Suggestions are welcome and feel free to open an issue if you see a bug.
-        
         
         
 Platform: UNKNOWN

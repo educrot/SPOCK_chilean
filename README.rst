@@ -31,13 +31,4 @@ Use the package manager **git clone** to install SPOCK_chilean::
 
     python setup.py install
 
-Or via pip::
-
-    pip install -i https://test.pypi.org/simple/ SPOCK-chilean==0.0.0
-
-
-Contributing
----------------------
-Suggestions are welcome and feel free to open an issue if you see a bug.
-
 
