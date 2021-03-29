@@ -1,4 +1,4 @@
-.. image:: https://travis-ci.com/educrot/SPOCK_chilean.svg?branch=master
+.. image:: https://travis-ci.com/educrot/SPOCK_chilean.svg?branch=master&status=failed
     :target: https://travis-ci.com/educrot/SPOCK_chilean
 
 .. image:: https://img.shields.io/badge/docs-dev-green.svg

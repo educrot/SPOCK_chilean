@@ -6,7 +6,7 @@ Home-page: https://github.com/educrot/SPOCK_chilean/
 Author: Elsa Ducrot
 Author-email: educrot@uliege.be
 License: UNKNOWN
-Description: .. image:: https://travis-ci.com/educrot/SPOCK_chilean.svg?token=58bf1b442db3e39d9439a0c1f5c6f9247d0a51ff&branch=master
+Description: .. image:: https://travis-ci.com/educrot/SPOCK_chilean.svg?branch=master&status=failed
             :target: https://travis-ci.com/educrot/SPOCK_chilean
         
         .. image:: https://img.shields.io/badge/docs-dev-green.svg
