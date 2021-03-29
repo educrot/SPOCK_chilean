@@ -1,8 +1,8 @@
-Metadata-Version: 1.0
+Metadata-Version: 1.2
 Name: SPOCK-chilean
 Version: 0.0.0
 Summary: Speculoos Observatory SChedule maKer for chilean night on SPECULOOS South Observatory
-Home-page: https://github.com/educrot/SPOCK_chilean/
+Home-page: https://github.com/educrot/SPOCK/
 Author: Elsa Ducrot
 Author-email: educrot@uliege.be
 License: UNKNOWN
@@ -39,6 +39,9 @@ Description: .. image:: https://travis-ci.com/educrot/SPOCK_chilean.svg?token=Jy
         
             python setup.py install
         
+        Or via pip::
+        
+            pip install -i https://test.pypi.org/simple/ SPOCK-chilean==0.0.0
         
         
         Contributing
@@ -48,3 +51,4 @@ Description: .. image:: https://travis-ci.com/educrot/SPOCK_chilean.svg?token=Jy
         
         
 Platform: UNKNOWN
+Requires-Python: >=3.6

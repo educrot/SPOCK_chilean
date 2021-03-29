@@ -1,6 +1,5 @@
 pandas
 numpy==1.19.0
-astroquery
 astroplan
 astropy
 matplotlib
@@ -8,5 +7,10 @@ datetime
 pyaml
 docx
 plotly
-scipy
-xlrd==1.2.0
+gspread
+oauth2client
+astroplan
+alive_progress
+paramiko
+chart_studio
+markdown

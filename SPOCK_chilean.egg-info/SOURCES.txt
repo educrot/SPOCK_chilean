@@ -3,8 +3,10 @@
 CNAME
 Chilean_SPOCKapp.html
 Chilean_SPOCKapp.ipynb
+LICENCE.txt
 Pipfile
 README.rst
+__init__.py
 calendar_chilean.xlsx
 run.ipynb
 run.py
@@ -112,6 +114,7 @@ SPOCK_chilean/txt_files.py
 SPOCK_chilean.egg-info/PKG-INFO
 SPOCK_chilean.egg-info/SOURCES.txt
 SPOCK_chilean.egg-info/dependency_links.txt
+SPOCK_chilean.egg-info/not-zip-safe
 SPOCK_chilean.egg-info/requires.txt
 SPOCK_chilean.egg-info/top_level.txt
 SPOCK_chilean/__pycache__/ETC.cpython-37.pyc
@@ -185,8 +188,6 @@ __pycache__/make_night_plans.cpython-37.pyc
 __pycache__/test_txtfiles.cpython-37.pyc
 dist/SPOCK_chilean-0.0.0-py3-none-any.whl
 dist/SPOCK_chilean-0.0.0.tar.gz
-doc/.DS_Store
-doc/build/.DS_Store
 doc/build/.buildinfo
 doc/build/.nojekyll
 doc/build/genindex.html
@@ -199,7 +200,6 @@ doc/build/.doctrees/environment.pickle
 doc/build/.doctrees/index.doctree
 doc/build/.doctrees/api/SPOCK_chilean.ETC.doctree
 doc/build/.doctrees/api/SPOCK_chilean.make_night_plans.doctree
-doc/build/.doctrees/api/SPOCK_chilean.test_txtfiles.doctree
 doc/build/.doctrees/api/SPOCK_chilean.txt_files.doctree
 doc/build/.doctrees/content/api.doctree
 doc/build/.doctrees/content/installation.doctree
