@@ -115,7 +115,6 @@ SPOCK_chilean/txt_files.py
 SPOCK_chilean.egg-info/PKG-INFO
 SPOCK_chilean.egg-info/SOURCES.txt
 SPOCK_chilean.egg-info/dependency_links.txt
-SPOCK_chilean.egg-info/not-zip-safe
 SPOCK_chilean.egg-info/requires.txt
 SPOCK_chilean.egg-info/top_level.txt
 SPOCK_chilean/__pycache__/ETC.cpython-37.pyc
