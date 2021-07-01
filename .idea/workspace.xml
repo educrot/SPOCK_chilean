@@ -2,9 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3b58c3b0-27c9-44fe-978e-a55140a5e06a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/SPOCK_chilean.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/SPOCK_chilean.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.travis.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.travis.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.rst" beforeDir="false" afterPath="$PROJECT_DIR$/README.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CNAME" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chilean_SPOCKapp.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chilean_SPOCKapp.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Chilean_SPOCKapp.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LICENCE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pipfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2020-10-13/Cal_flatdawn.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Plans_by_date/2020-10-13/Cal_flatdawn.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2020-10-13/Obj_Ch_test.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2020-10-13/startup.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Plans_by_date/2020-10-13/startup.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SPOCK_chilean.egg-info/PKG-INFO" beforeDir="false" afterPath="$PROJECT_DIR$/SPOCK_chilean.egg-info/PKG-INFO" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SPOCK_chilean.egg-info/requires.txt" beforeDir="false" afterPath="$PROJECT_DIR$/SPOCK_chilean.egg-info/requires.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SPOCK_chilean/ETC.py" beforeDir="false" afterPath="$PROJECT_DIR$/SPOCK_chilean/ETC.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SPOCK_chilean/make_night_plans.py" beforeDir="false" afterPath="$PROJECT_DIR$/SPOCK_chilean/make_night_plans.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/SPOCK_chilean-0.0.0-py3.7.egg" beforeDir="false" afterPath="$PROJECT_DIR$/dist/SPOCK_chilean-0.0.0-py3.7.egg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,13 +43,22 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/SPOCK_chilean" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyIntegratedToolsModulesConfigurable" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="PyConsoleOptionsProvider">
+    <option name="myPythonConsoleState">
+      <console-settings module-name="SPOCK_chilean" sdk-home="$USER_HOME$/elsenv/bin/python">
+        <option name="mySdkHome" value="$USER_HOME$/elsenv/bin/python" />
+        <option name="myModuleName" value="SPOCK_chilean" />
+      </console-settings>
+    </option>
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/SPOCK_chilean" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/docs/source/examples/SPOCK_chilean_nights" />
     </key>
@@ -178,9 +204,14 @@
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/SPOCK_chilean/ETC.py</url>
-          <line>357</line>
-          <option name="timeStamp" value="21" />
+          <url>file://$PROJECT_DIR$/run.py</url>
+          <line>23</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/SPOCK_chilean/make_night_plans.py</url>
+          <line>379</line>
+          <option name="timeStamp" value="24" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>

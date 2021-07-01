@@ -1,12 +1,12 @@
 pandas
 numpy==1.19.0
 astroquery
-astroplan
-astropy
+astroplan==0.9
+astropy==4.0
 matplotlib
 datetime
 pyaml
-docx
+python-docx
 plotly
 scipy
 xlrd==1.2.0

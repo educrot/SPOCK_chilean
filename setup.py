@@ -8,7 +8,7 @@ def read(fname):
 
 setup(
     name='SPOCK_chilean',
-    version='0.0.0',
+    version='0.0.1',
     author='Elsa Ducrot',
     author_email='educrot@uliege.be',
     description=('Speculoos Observatory SChedule maKer for chilean night on SPECULOOS South Observatory'),
@@ -16,6 +16,7 @@ setup(
     url='https://github.com/educrot/SPOCK_chilean/',
     packages=find_packages(),
     long_description=read('README.rst'),
-    install_requires=['pandas','numpy==1.19.0','astroquery','astroplan','astropy','matplotlib','datetime','pyaml',
-                        'docx','plotly','scipy','xlrd==1.2.0'],
+    python_requires='>=3.6',
+    install_requires=['pandas','numpy==1.19.0','astroquery','astroplan==0.8','astropy==4.0','matplotlib','datetime','pyaml',
+                      'python-docx','plotly','scipy','xlrd==1.2.0'],
 )

@@ -5,3 +5,11 @@ run.ipynb
 calendar_chilean.xlsx
 
 Chilean_SPOCKapp.html
+
+.travis.yml
+
+doc/
+
+build/
+
+dist/

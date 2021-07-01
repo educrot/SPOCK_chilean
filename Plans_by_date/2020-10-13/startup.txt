@@ -1,15 +1,15 @@
 ; == Startup ==
 ;
 ;
-#waituntil 1, 2020/10/13 22:42:47
+#waituntil 1, 2020/10/13 22:42:46
 #domeopen
 ;
 #chill -60
 ;
-#waituntil 1, 2020/10/13 22:52:47
+#waituntil 1, 2020/10/13 22:52:46
 #duskflats Cal_flatexo.txt
 ;
-#quitat 2020/10/14 01:01:00
+#quitat 2020/10/14 00:30:00
 ;
-#chain Obj_Ch_test.txt
+#chain Obj_Ch_test1.txt
 ;

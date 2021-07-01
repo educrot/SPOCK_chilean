@@ -1,13 +1,11 @@
 import pandas as pd
 from SPOCK_chilean.make_night_plans import chilean_time
-
-import pandas as pd
-from SPOCK_chilean.make_night_plans import chilean_time
+import SPOCK_chilean.ETC as ETC
 
 # set in advance with the planning with SSO team
 telescope = 'Io'
 
-date = '2020-10-13'  # start of night date
+date = '2021-09-13'  # start of night date
 chilean_nb_target = 1  # number of target to observe this night
 counts = 5000  # counts of images per targets (no limit = 5000)
 chilean_plans = chilean_time(date)
@@ -22,6 +20,8 @@ target_chilean = pd.DataFrame({'Date': date, 'Telescope': telescope, 'Name': 'Ch
 
 chilean_plans.make_plans(target_chilean)
 chilean_plans.check_plans()
+
+print()
 
 # set in advance with the planning of the chilean nights
 telescope = 'Ganymede'
