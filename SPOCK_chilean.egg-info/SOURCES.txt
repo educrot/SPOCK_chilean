@@ -123,6 +123,10 @@ doc/build/.doctrees/api/SPOCK_chilean.txt_files.doctree
 doc/build/.doctrees/content/api.doctree
 doc/build/.doctrees/content/installation.doctree
 doc/build/.doctrees/content/quick-ref.doctree
+doc/build/.doctrees/examples/tutorial_videos.doctree
+doc/build/.doctrees/examples/using_spock_chilean.doctree
+doc/build/.doctrees/nbsphinx/examples/tutorial_videos.ipynb
+doc/build/.doctrees/nbsphinx/examples/using_spock_chilean.ipynb
 doc/build/_modules/index.html
 doc/build/_modules/SPOCK_chilean/make_night_plans.html
 doc/build/_modules/SPOCK_chilean/txt_files.html
@@ -133,6 +137,8 @@ doc/build/_sources/api/SPOCK_chilean.txt_files.rst.txt
 doc/build/_sources/content/api.rst.txt
 doc/build/_sources/content/installation.rst.txt
 doc/build/_sources/content/quick-ref.rst.txt
+doc/build/_sources/examples/tutorial_videos.ipynb.txt
+doc/build/_sources/examples/using_spock_chilean.ipynb.txt
 doc/build/_static/basic.css
 doc/build/_static/doctools.js
 doc/build/_static/documentation_options.js
@@ -193,6 +199,10 @@ doc/build/api/SPOCK_chilean.txt_files.html
 doc/build/content/api.html
 doc/build/content/installation.html
 doc/build/content/quick-ref.html
+doc/build/examples/tutorial_videos.html
+doc/build/examples/tutorial_videos.ipynb
+doc/build/examples/using_spock_chilean.html
+doc/build/examples/using_spock_chilean.ipynb
 docs/.DS_Store
 docs/source/.DS_Store
 docs/source/conf.py

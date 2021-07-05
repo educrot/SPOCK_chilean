@@ -8,4 +8,6 @@ Chilean_SPOCKapp.html
 
 .travis.yml
 
+build/
+
 dist/
