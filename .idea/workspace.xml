@@ -1,7 +1,215 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3b58c3b0-27c9-44fe-978e-a55140a5e06a" name="Default Changelist" comment="" />
+    <list default="true" id="3b58c3b0-27c9-44fe-978e-a55140a5e06a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/SPOCK_chilean/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Archive_night_blocks_chilean/night_blocks_Europa_2021-04-09.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Archive_night_blocks_chilean/night_blocks_Europa_2021-04-10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Archive_night_blocks_chilean/night_blocks_Io_2021-04-03.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Archive_night_blocks_chilean/night_blocks__2021-04-09.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chilean_SPOCKapp.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Chilean_SPOCKapp.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2020-01-21/Cal_biasdark.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2020-01-21/Cal_flatdawn.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2020-01-21/Cal_flatexo.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2020-01-21/Obj_Ch1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2020-01-21/Obj_Ch2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2020-01-21/Obj_Ch3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2020-01-21/Obj_Ch4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2020-01-21/startup.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2020-01-22/Cal_biasdark.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2020-01-22/Cal_flatdawn.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2020-01-22/Cal_flatexo.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2020-01-22/Obj_.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2020-01-22/Obj_rsrt.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2020-01-22/Obj_test.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2020-01-22/Obj_test1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2020-01-22/startup.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2020-01-27/Cal_biasdark.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2020-01-27/Cal_flatdawn.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2020-01-27/Cal_flatexo.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2020-01-27/Obj_Ch1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2020-01-27/startup.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2020-01-30/Cal_biasdark.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2020-01-30/Cal_flatdawn.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2020-01-30/Cal_flatexo.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2020-01-30/Obj_Ch_1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2020-01-30/startup.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2020-01-31/Cal_biasdark.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2020-01-31/Cal_flatdawn.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2020-02-01/Cal_biasdark.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2020-02-01/Cal_flatdawn.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2020-02-01/Cal_flatexo.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2020-02-01/Obj_Ch_benjamin.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2020-02-01/startup.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2020-05-26/Cal_biasdark.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2020-05-26/Cal_flatdawn.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2020-05-26/Cal_flatexo.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2020-05-26/Obj_Ch_1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2020-05-26/startup.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2020-06-25/Cal_biasdark.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2020-06-25/Cal_flatdawn.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2020-06-25/Cal_flatexo.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2020-06-25/Obj_Ch3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2020-06-25/startup.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2020-08-13/Cal_biasdark.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2020-08-13/Cal_flatdawn.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2020-10-02/Cal_biasdark.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2020-10-02/Cal_flatdawn.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2020-10-13/Cal_biasdark.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2020-10-13/Cal_flatdawn.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2020-10-13/Cal_flatexo.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2020-10-13/Obj_Ch_test1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2020-10-13/startup.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2020-10-14/Cal_biasdark.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2020-10-14/Cal_flatdawn.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2020-10-14/Cal_flatexo.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2020-10-14/Obj_Ch_test.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2020-10-14/startup.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2020-10-15/Cal_biasdark.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2020-10-15/Cal_flatdawn.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2020-10-15/Cal_flatexo.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2020-10-15/Obj_Ch_test1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2020-10-15/startup.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2021-04-03/Cal_biasdark.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2021-04-03/Cal_flatdawn.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2021-04-03/Cal_flatexo.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2021-04-03/Obj_Ch_test.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2021-04-03/startup.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2021-04-09/Cal_biasdark.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2021-04-09/Cal_flatdawn.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2021-04-09/Cal_flatexo.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2021-04-09/Obj_Ch_44.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2021-04-09/startup.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2021-04-10/Cal_biasdark.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2021-04-10/Cal_flatdawn.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2021-04-10/Cal_flatexo.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2021-04-10/Obj_Ch_test.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2021-04-10/startup.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2021-09-01/Cal_biasdark.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2021-09-01/Cal_flatdawn.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2021-09-01/Cal_flatexo.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2021-09-01/Obj_Test-1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2021-09-01/startup.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2021-09-02/Cal_biasdark.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2021-09-02/Cal_flatdawn.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2021-09-02/Cal_flatexo.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2021-09-02/Obj_Test-1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plans_by_date/2021-09-02/startup.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SPOCK_chilean.egg-info/SOURCES.txt" beforeDir="false" afterPath="$PROJECT_DIR$/SPOCK_chilean.egg-info/SOURCES.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SPOCK_chilean.egg-info/requires.txt" beforeDir="false" afterPath="$PROJECT_DIR$/SPOCK_chilean.egg-info/requires.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SPOCK_chilean.egg-info/top_level.txt" beforeDir="false" afterPath="$PROJECT_DIR$/SPOCK_chilean.egg-info/top_level.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SPOCK_chilean/ETC.py" beforeDir="false" afterPath="$PROJECT_DIR$/SPOCK_chilean/ETC.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SPOCK_chilean/app.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SPOCK_chilean/make_night_plans.py" beforeDir="false" afterPath="$PROJECT_DIR$/SPOCK_chilean/make_night_plans.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SPOCK_chilean/txt_files.py" beforeDir="false" afterPath="$PROJECT_DIR$/SPOCK_chilean/txt_files.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/.buildinfo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/.doctrees/api/SPOCK_chilean.ETC.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doc/build/.doctrees/api/SPOCK_chilean.ETC.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/.doctrees/api/SPOCK_chilean.make_night_plans.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doc/build/.doctrees/api/SPOCK_chilean.make_night_plans.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/.doctrees/content/api.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doc/build/.doctrees/content/api.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/.doctrees/content/quick-ref.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doc/build/.doctrees/content/quick-ref.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/.doctrees/environment.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/.doctrees/examples/SPOCK_chilean/pythontuto.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/.doctrees/examples/SPOCK_chilean/run.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/.doctrees/index.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/.doctrees/nbsphinx/examples/SPOCK_chilean/run.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/.nojekyll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/_images/etc.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/_images/go_to_plan_button.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/_images/options.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/_images/plan_check.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/_images/plan_maker.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/_images/required.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/_modules/SPOCK_chilean/ETC.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/_modules/SPOCK_chilean/make_night_plans.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/_modules/SPOCK_chilean/txt_files.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/_modules/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/_sources/api/SPOCK_chilean.ETC.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/_sources/api/SPOCK_chilean.make_night_plans.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/_sources/api/SPOCK_chilean.txt_files.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/_sources/content/api.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/_sources/content/installation.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/_sources/content/quick-ref.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/_sources/examples/SPOCK_chilean/exampleapp.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/_sources/examples/SPOCK_chilean/pythontuto.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/_sources/examples/SPOCK_chilean/run.ipynb.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/_sources/index.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/_static/basic.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/_static/css/badge_only.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/_static/css/theme.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/_static/doctools.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/_static/documentation_options.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/_static/file.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/_static/fonts/Inconsolata-Bold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/_static/fonts/Inconsolata-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/_static/fonts/Inconsolata.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/_static/fonts/Lato-Bold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/_static/fonts/Lato-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/_static/fonts/Lato/lato-bold.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/_static/fonts/Lato/lato-bold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/_static/fonts/Lato/lato-bold.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/_static/fonts/Lato/lato-bold.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/_static/fonts/Lato/lato-bolditalic.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/_static/fonts/Lato/lato-bolditalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/_static/fonts/Lato/lato-bolditalic.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/_static/fonts/Lato/lato-bolditalic.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/_static/fonts/Lato/lato-italic.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/_static/fonts/Lato/lato-italic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/_static/fonts/Lato/lato-italic.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/_static/fonts/Lato/lato-italic.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/_static/fonts/Lato/lato-regular.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/_static/fonts/Lato/lato-regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/_static/fonts/Lato/lato-regular.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/_static/fonts/Lato/lato-regular.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/_static/fonts/RobotoSlab-Bold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/_static/fonts/RobotoSlab-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/_static/fonts/RobotoSlab/roboto-slab-v7-bold.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/_static/fonts/RobotoSlab/roboto-slab-v7-bold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/_static/fonts/RobotoSlab/roboto-slab-v7-bold.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/_static/fonts/RobotoSlab/roboto-slab-v7-bold.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/_static/fonts/RobotoSlab/roboto-slab-v7-regular.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/_static/fonts/RobotoSlab/roboto-slab-v7-regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/_static/fonts/RobotoSlab/roboto-slab-v7-regular.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/_static/fonts/RobotoSlab/roboto-slab-v7-regular.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/_static/fonts/fontawesome-webfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/_static/fonts/fontawesome-webfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/_static/fonts/fontawesome-webfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/_static/fonts/fontawesome-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/_static/fonts/fontawesome-webfont.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/_static/jquery-3.5.1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/_static/jquery.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/_static/js/modernizr.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/_static/js/theme.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/_static/language_data.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/_static/minus.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/_static/plus.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/_static/pygments.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/_static/searchtools.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/_static/underscore-1.3.1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/_static/underscore.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/api/SPOCK_chilean.ETC.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/api/SPOCK_chilean.make_night_plans.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/api/SPOCK_chilean.txt_files.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/content/api.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/content/installation.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/content/quick-ref.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/examples/SPOCK_chilean/exampleapp.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/examples/SPOCK_chilean/pythontuto.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/examples/SPOCK_chilean/run.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/examples/SPOCK_chilean/run.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/genindex.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/objects.inv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/py-modindex.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/search.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/searchindex.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/jupyter_execute/examples/SPOCK_chilean/pythontuto.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/jupyter_execute/examples/SPOCK_chilean/pythontuto.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/source/examples/SPOCK_chilean/pythontuto.rst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/source/index.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/source/index.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,18 +387,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/run.py</url>
-          <line>127</line>
+          <line>158</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/run.py</url>
-          <line>23</line>
+          <line>36</line>
           <option name="timeStamp" value="23" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/SPOCK_chilean/make_night_plans.py</url>
-          <line>379</line>
-          <option name="timeStamp" value="24" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>

@@ -16,11 +16,13 @@ of the solar neighborhood `Link to site <https://www.speculoos.uliege.be/cms/c_4
    content/installation
 
 .. toctree::
-   :caption: Quick start
-   :maxdepth: 2
+   :caption: Examples & Tutorials
+   :maxdepth: 1
 
-   examples/SPOCK_chilean/pythontuto.rst
-   examples/SPOCK_chilean/exampleapp.rst
+   examples/using_spock_chilean.ipynb
+   examples/tutorial_videos.ipynb
+
+
 
 
 

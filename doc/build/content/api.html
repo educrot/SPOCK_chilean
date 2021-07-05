@@ -26,7 +26,7 @@
         <script src="../_static/doctools.js"></script>
         <script src="../_static/language_data.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
@@ -102,10 +102,9 @@
 <li class="toctree-l1"><a class="reference internal" href="quick-ref.html">Quick reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Quick start</span></p>
+<p class="caption"><span class="caption-text">Examples &amp; Tutorials</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../examples/SPOCK_chilean/pythontuto.html">Python use</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../examples/SPOCK_chilean/exampleapp.html">Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/using_spock_chilean.html">Using <code class="docutils literal notranslate"><span class="pre">spock_chilean</span></code></a></li>
 </ul>
 
             
@@ -202,11 +201,11 @@
 <span id="make-night-plans"></span><h3>Make night plans<a class="headerlink" href="#module-SPOCK_chilean.make_night_plans" title="Permalink to this headline">¶</a></h3>
 <dl class="py class">
 <dt id="SPOCK_chilean.make_night_plans.chilean_time">
-<em class="property">class </em><code class="sig-prename descclassname">SPOCK_chilean.make_night_plans.</code><code class="sig-name descname">chilean_time</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">start_date</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/SPOCK_chilean/make_night_plans.html#chilean_time"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#SPOCK_chilean.make_night_plans.chilean_time" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">SPOCK_chilean.make_night_plans.</code><code class="sig-name descname">chilean_time</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">start_date</span></em>, <em class="sig-param"><span class="n">telescope</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/SPOCK_chilean/make_night_plans.html#chilean_time"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#SPOCK_chilean.make_night_plans.chilean_time" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create and check ACP plans for 10% of SSO’s on-sky-time dedicated to chilean observations</p>
 <dl class="py method">
 <dt id="SPOCK_chilean.make_night_plans.chilean_time.check_distance_speculoos_targets">
-<code class="sig-name descname">check_distance_speculoos_targets</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ra</span></em>, <em class="sig-param"><span class="n">dec</span></em>, <em class="sig-param"><span class="n">target_name</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/SPOCK_chilean/make_night_plans.html#chilean_time.check_distance_speculoos_targets"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#SPOCK_chilean.make_night_plans.chilean_time.check_distance_speculoos_targets" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">check_distance_speculoos_targets</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">coords_str</span></em>, <em class="sig-param"><span class="n">target_name</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/SPOCK_chilean/make_night_plans.html#chilean_time.check_distance_speculoos_targets"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#SPOCK_chilean.make_night_plans.chilean_time.check_distance_speculoos_targets" title="Permalink to this definition">¶</a></dt>
 <dd><p>check if target is not in SPECULOOS target list</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -221,6 +220,20 @@
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>info message</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="SPOCK_chilean.make_night_plans.chilean_time.check_night_blocks">
+<code class="sig-name descname">check_night_blocks</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/SPOCK_chilean/make_night_plans.html#chilean_time.check_night_blocks"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#SPOCK_chilean.make_night_plans.chilean_time.check_night_blocks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if plans meet constraints</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>return message to inform if the plan are ok or not</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>info message</p>
 </dd>
 </dl>
 </dd></dl>
@@ -261,8 +274,8 @@
 </dd></dl>
 
 <dl class="py method">
-<dt id="SPOCK_chilean.make_night_plans.chilean_time.make_plans">
-<code class="sig-name descname">make_plans</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">target_chilean</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/SPOCK_chilean/make_night_plans.html#chilean_time.make_plans"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#SPOCK_chilean.make_night_plans.chilean_time.make_plans" title="Permalink to this definition">¶</a></dt>
+<dt id="SPOCK_chilean.make_night_plans.chilean_time.make_ACP_plans">
+<code class="sig-name descname">make_ACP_plans</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">target_chilean</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/SPOCK_chilean/make_night_plans.html#chilean_time.make_ACP_plans"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#SPOCK_chilean.make_night_plans.chilean_time.make_ACP_plans" title="Permalink to this definition">¶</a></dt>
 <dd><p>Make plans from basic information of each target</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -277,6 +290,19 @@
 </dl>
 </dd></dl>
 
+</dd></dl>
+
+<dl class="py function">
+<dt id="SPOCK_chilean.make_night_plans.read_night_block">
+<code class="sig-prename descclassname">SPOCK_chilean.make_night_plans.</code><code class="sig-name descname">read_night_block</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">telescope</span></em>, <em class="sig-param"><span class="n">day</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/SPOCK_chilean/make_night_plans.html#read_night_block"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#SPOCK_chilean.make_night_plans.read_night_block" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>telescope</strong> (<em>name telescope</em>) – </p></li>
+<li><p><strong>day</strong> (<em>date</em>) – </p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
@@ -554,47 +580,6 @@
 </div>
 <div class="section" id="module-SPOCK_chilean.ETC">
 <span id="etc"></span><h3>ETC<a class="headerlink" href="#module-SPOCK_chilean.ETC" title="Permalink to this headline">¶</a></h3>
-<dl class="py class">
-<dt id="SPOCK_chilean.ETC.etc">
-<em class="property">class </em><code class="sig-prename descclassname">SPOCK_chilean.ETC.</code><code class="sig-name descname">etc</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mag_val</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mag_band</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">spt</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">filt</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">airmass</span><span class="o">=</span><span class="default_value">1.1</span></em>, <em class="sig-param"><span class="n">moonphase</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">irtf</span><span class="o">=</span><span class="default_value">0.8</span></em>, <em class="sig-param"><span class="n">num_tel</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">seeing</span><span class="o">=</span><span class="default_value">1.0</span></em>, <em class="sig-param"><span class="n">gain</span><span class="o">=</span><span class="default_value">1.1</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/SPOCK_chilean/ETC.html#etc"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#SPOCK_chilean.ETC.etc" title="Permalink to this definition">¶</a></dt>
-<dd><p>Exposure time calculator sor SSO facility</p>
-<dl class="py method">
-<dt id="SPOCK_chilean.ETC.etc.exp_time_calculator">
-<code class="sig-name descname">exp_time_calculator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ADUpeak</span><span class="o">=</span><span class="default_value">45000</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/SPOCK_chilean/ETC.html#etc.exp_time_calculator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#SPOCK_chilean.ETC.etc.exp_time_calculator" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>ADUpeak</strong> (<em>float</em>) – ADU peak excpeted (default is 45000)</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><ul class="simple">
-<li><p><strong>exp_t</strong> (<em>float</em>) – exposure time optimized for the ADU peak given</p></li>
-<li><p><strong>peak_ADU</strong> (<em>float</em>) – ADU peak chosen</p></li>
-<li><p><strong>snr</strong> (<em>float</em>) – signal to noise ratio</p></li>
-</ul>
-</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="SPOCK_chilean.ETC.etc.peak_calculation">
-<code class="sig-name descname">peak_calculation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">exp_t</span><span class="o">=</span><span class="default_value">10</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/SPOCK_chilean/ETC.html#etc.peak_calculation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#SPOCK_chilean.ETC.etc.peak_calculation" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>exp_t</strong> (<em>float</em>) – exposure time</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><ul class="simple">
-<li><p><strong>peak_ADU</strong> (<em>float</em>) – peak in ADU associated to this exposure time</p></li>
-<li><p><strong>sky_gain</strong> (<em>float</em>) – sky gain</p></li>
-</ul>
-</p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
 </div>
 </div>
 </div>

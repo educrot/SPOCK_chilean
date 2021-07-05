@@ -1,8 +1,8 @@
 pandas
 numpy==1.19.0
 astroquery
-astroplan==0.9
-astropy==4.0
+astroplan==0.8
+astropy==4.2.1
 matplotlib
 datetime
 pyaml

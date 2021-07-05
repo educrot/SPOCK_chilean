@@ -26,7 +26,7 @@
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/language_data.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
@@ -92,10 +92,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../../content/quick-ref.html">Quick reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../content/installation.html">Installation</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Quick start</span></p>
+<p class="caption"><span class="caption-text">Examples &amp; Tutorials</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../examples/SPOCK_chilean/pythontuto.html">Python use</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../examples/SPOCK_chilean/exampleapp.html">Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/using_spock_chilean.html">Using <code class="docutils literal notranslate"><span class="pre">spock_chilean</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/tutorial_videos.html">Tutorial videos</a></li>
 </ul>
 
             
@@ -162,6 +162,7 @@
 <span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">astropy.time</span> <span class="kn">import</span> <span class="n">Time</span>
 
 <span class="n">startup_time</span><span class="o">=</span><span class="p">[]</span>
 <span class="n">hour</span><span class="o">=</span><span class="p">[]</span>
@@ -186,9 +187,9 @@
 <span class="sd">        startup.txt file (ACP compatible)</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">date_start</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">datetime64</span><span class="p">(</span><span class="n">date_start</span><span class="p">)</span>
-    <span class="n">sun_set</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">datetime64</span><span class="p">(</span><span class="n">sun_set</span><span class="p">)</span>
-    <span class="n">startup_time1</span><span class="o">=</span><span class="n">sun_set</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">timedelta64</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="s1">&#39;m&#39;</span><span class="p">)</span>
+    <span class="n">date_start</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">datetime64</span><span class="p">(</span><span class="n">date_start</span><span class="p">)</span>
+    <span class="n">sun_set</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">datetime64</span><span class="p">(</span><span class="n">sun_set</span><span class="p">)</span>
+    <span class="n">startup_time1</span> <span class="o">=</span> <span class="n">sun_set</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">timedelta64</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="s1">&#39;m&#39;</span><span class="p">)</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">Path</span><span class="p">,</span> <span class="s1">&#39;startup.txt&#39;</span><span class="p">),</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
     <span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
@@ -211,6 +212,8 @@
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">):</span>
             <span class="n">out</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">str00</span><span class="p">)</span>
         <span class="n">out</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">str3</span> <span class="o">+</span> <span class="n">str33</span><span class="p">)</span>
+        <span class="n">out</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;#dir C:\Users\speculoos\Documents\ACP Astronomy\Images\Chilean&quot;</span> <span class="o">+</span> <span class="sa">r</span><span class="s2">&quot;\ &quot;</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span>
+                  <span class="nb">str</span><span class="p">(</span><span class="n">Time</span><span class="p">(</span><span class="n">date_start</span><span class="p">,</span> <span class="n">out_subfmt</span><span class="o">=</span><span class="s1">&#39;date&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">iso</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">):</span>
             <span class="n">out</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">str00</span><span class="p">)</span>
         <span class="n">out</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">str1</span> <span class="o">+</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">startup_time1</span><span class="p">))</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y/%m/</span><span class="si">%d</span><span class="s1"> %H:%M:%S&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span><span class="c1">#str(hour1) + &#39;:&#39; + str(minute1) + &#39;\n&#39;)</span>
@@ -912,7 +915,7 @@
         <span class="k">if</span> <span class="s1">&#39;i</span><span class="se">\&#39;</span><span class="s1">&#39;</span> <span class="ow">in</span> <span class="n">filt</span><span class="p">:</span>
             <span class="n">out</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">nbi</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;,&#39;</span> <span class="o">+</span> <span class="s1">&#39;i</span><span class="se">\&#39;</span><span class="s1">&#39;</span> <span class="s1">&#39;,&#39;</span> <span class="o">+</span> <span class="s1">&#39;1&#39;</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="n">out</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">str00</span> <span class="o">+</span>  <span class="nb">str</span><span class="p">(</span><span class="n">nbi</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;,&#39;</span> <span class="o">+</span> <span class="s1">&#39;i</span><span class="se">\&#39;</span><span class="s1">&#39;</span> <span class="s1">&#39;,&#39;</span> <span class="o">+</span> <span class="s1">&#39;1&#39;</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+            <span class="n">out</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">str00</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">nbi</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;,&#39;</span> <span class="o">+</span> <span class="s1">&#39;i</span><span class="se">\&#39;</span><span class="s1">&#39;</span> <span class="s1">&#39;,&#39;</span> <span class="o">+</span> <span class="s1">&#39;1&#39;</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
         <span class="k">if</span> <span class="s1">&#39;g</span><span class="se">\&#39;</span><span class="s1">&#39;</span> <span class="ow">in</span> <span class="n">filt</span><span class="p">:</span>
             <span class="n">out</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">nbg</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;,&#39;</span> <span class="o">+</span> <span class="s1">&#39;g</span><span class="se">\&#39;</span><span class="s1">&#39;</span> <span class="s1">&#39;,&#39;</span> <span class="o">+</span> <span class="s1">&#39;1&#39;</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>

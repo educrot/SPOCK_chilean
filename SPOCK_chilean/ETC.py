@@ -3,6 +3,7 @@ import numpy as np
 import sys
 from astropy.io import ascii
 from astropy.table import Table
+from SPOCK_chilean import path_spock_chilean
 
 path_spock = '.'
 
@@ -76,7 +77,7 @@ class etc:
         self.h           = 6.62607E-34
         self.e           = 2.71828
 
-        self.c1_file=path_spock + "/SPOCK_chilean/files_ETC/coating_1.dat"
+        self.c1_file=path_spock_chilean+ "/SPOCK_chilean/files_ETC/coating_1.dat"
         self.c1=ascii.read(self.c1_file, data_start=0)
         # plt.grid(True)
         # plt.xlabel("Wavelength [nm]")
@@ -84,7 +85,7 @@ class etc:
         # plt.plot(c1['col1'],c1['col2'])
         # plt.show()
 
-        self.c2_file = path_spock + "/SPOCK_chilean/files_ETC/coating_2.dat"
+        self.c2_file = path_spock_chilean+ "/SPOCK_chilean/files_ETC/coating_2.dat"
         self.c2 = ascii.read(self.c2_file, data_start=0)
         #  plt.grid(True)
         #  plt.xlabel("Wavelength [nm]")
@@ -92,7 +93,7 @@ class etc:
         #  plt.plot(c2['col1'],c2['col2'])
         #  plt.show()
 
-        self.ccd_file=path_spock + "/SPOCK_chilean/files_ETC/ccd.dat"
+        self.ccd_file=path_spock_chilean+ "/SPOCK_chilean/files_ETC/ccd.dat"
         self.ccd=ascii.read(self.ccd_file, data_start=5)
         # plt.grid(True)
         # plt.xlabel("Wavelength [nm]")
@@ -100,7 +101,7 @@ class etc:
         # plt.plot(ccd['col1'],ccd['col2'])
         # plt.show()
 
-        self.qet_file=path_spock + "/SPOCK_chilean/files_ETC/qet.dat"
+        self.qet_file=path_spock_chilean+ "/SPOCK_chilean/files_ETC/qet.dat"
         self.qet=ascii.read(self.qet_file, data_start=0)
         # plt.grid(True)
         # plt.xlabel("Wavelength [nm]")
@@ -108,7 +109,7 @@ class etc:
         # plt.plot(qet['col1'],qet['col2'])
         # plt.show()
 
-        self.window_file=path_spock + "/SPOCK_chilean/files_ETC/window.dat"
+        self.window_file=path_spock_chilean+ "/SPOCK_chilean/files_ETC/window.dat"
         self.window=ascii.read(self.window_file, data_start=0)
         # plt.grid(True)
         # plt.xlabel("Wavelength [nm]")
@@ -148,7 +149,7 @@ class etc:
         if dt < 0.:
             self.ccd['col2']=self.ccd['col2']*self.qet['col2']
 
-        bg_file = path_spock + "/SPOCK_chilean/files_ETC/background.dat"
+        bg_file = path_spock_chilean+ "/SPOCK_chilean/files_ETC/background.dat"
         self.bg = ascii.read(bg_file, data_start=0)
 
         #  plt.xlim(500,510)
@@ -222,7 +223,7 @@ class etc:
         # plt.plot(back['col1'],back['col2'])
         # plt.show()
 
-        extind_file=path_spock + "/SPOCK_chilean/files_ETC/extin.dat"
+        extind_file=path_spock_chilean+ "/SPOCK_chilean/files_ETC/extin.dat"
         self.extind=ascii.read(extind_file, data_start=0)
 
         # plt.plot(extind['col1'],extind['col6'],extind['col1'],extind['col5'],extind['col1'],extind['col4'], \
@@ -287,7 +288,7 @@ class etc:
             # print(5/0)
 
         # available spectra are in folder Spectra
-        path=path_spock + '/SPOCK_chilean/files_ETC/Spectra/'
+        path=path_spock_chilean+ '/SPOCK_chilean/files_ETC/Spectra/'
         spec_file = os.path.join(path,self.spectra['file'][self.i])
         self.spec=ascii.read(spec_file, data_start=0)
         # plt.grid(True)
@@ -298,7 +299,7 @@ class etc:
         # plt.show()
 
         #  available filters are in folder Filters, check available files
-        path = path_spock + '/SPOCK_chilean/files_ETC/Filters/'
+        path = path_spock_chilean+ '/SPOCK_chilean/files_ETC/Filters/'
         files = []
         #  r=root, d=directories, f = files
         for r, d, f in os.walk(path):
@@ -410,11 +411,11 @@ class etc:
         # planet sensitivity
         sensi=np.sqrt(self.nsigma*errorbin_rn/earthtra)
 
-        print("Peak [ADU]:\t", peak/self.gain)
-        print("Sky [ADU]:\t", tbackape/self.gain)
+        print("For texp:"+str(exp_t)+"s, expected peak [ADU]:\t", peak/self.gain)
+        # print("Sky [ADU]:\t", tbackape/self.gain)
         peak_ADU = peak/self.gain
         sky_gain = tbackape/self.gain
-        return error,errorbin_rn
+        return peak_ADU
 
     def exp_time_calculator(self,ADUpeak = None):
         # # # # # # # # # #   Observation

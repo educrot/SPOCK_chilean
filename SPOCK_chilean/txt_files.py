@@ -1,6 +1,7 @@
 import numpy as np
 import os
 import pandas as pd
+from astropy.time import Time
 
 startup_time=[]
 hour=[]
@@ -25,9 +26,9 @@ def startup(name,sun_set,date_start,Path):
         startup.txt file (ACP compatible)
 
     """
-    date_start=np.datetime64(date_start)
-    sun_set=np.datetime64(sun_set)
-    startup_time1=sun_set+np.timedelta64(10,'m')
+    date_start = np.datetime64(date_start)
+    sun_set = np.datetime64(sun_set)
+    startup_time1 = sun_set+np.timedelta64(10,'m')
     try:
         open(os.path.join(Path, 'startup.txt'), 'w')
     except FileNotFoundError:
@@ -50,6 +51,8 @@ def startup(name,sun_set,date_start,Path):
         for i in range(1,2):
             out.write(str00)
         out.write(str3 + str33)
+        out.write(r"#dir C:\Users\speculoos\Documents\ACP Astronomy\Images\Chilean" + r"\ "[0] +
+                  str(Time(date_start, out_subfmt='date').iso) + '\n')
         for i in range(1,2):
             out.write(str00)
         out.write(str1 + pd.to_datetime(str(startup_time1)).strftime('%Y/%m/%d %H:%M:%S') + '\n')#str(hour1) + ':' + str(minute1) + '\n')
@@ -751,7 +754,7 @@ def flatexo_io(Path,filt,nbu=None,nbHa=None,nbRc=None,nbz=None,nbr=None,nbi=None
         if 'i\'' in filt:
             out.write(str(nbi) + ',' + 'i\'' ',' + '1' + '\n')
         else:
-            out.write(str00 +  str(nbi) + ',' + 'i\'' ',' + '1' + '\n')
+            out.write(str00 + str(nbi) + ',' + 'i\'' ',' + '1' + '\n')
         if 'g\'' in filt:
             out.write(str(nbg) + ',' + 'g\'' ',' + '1' + '\n')
         else:
