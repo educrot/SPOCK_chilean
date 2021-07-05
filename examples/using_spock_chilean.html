@@ -1,0 +1,718 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Using spock_chilean &mdash; SPOCK_chilean 0.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Tutorial videos" href="tutorial_videos.html" />
+    <link rel="prev" title="Installation" href="../content/installation.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #007541" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> SPOCK_chilean
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Content</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../content/api.html">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/quick-ref.html">Quick reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/installation.html">Installation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Examples &amp; Tutorials</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Using <code class="docutils literal notranslate"><span class="pre">spock_chilean</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#Initialisation">Initialisation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Data-frame-with-information-on-targets">Data frame with information on targets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Make-night_blocks">Make night_blocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Check-night_blocks-respect-SPECULOOS-constraints">Check night_blocks respect SPECULOOS constraints</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_videos.html">Tutorial videos</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SPOCK_chilean</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Using <code class="docutils literal notranslate"><span class="pre">spock_chilean</span></code></li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/examples/using_spock_chilean.ipynb.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput.container,
+div.nbinput.container div.prompt,
+div.nbinput.container div.input_area,
+div.nbinput.container div[class*=highlight],
+div.nbinput.container div[class*=highlight] pre,
+div.nboutput.container,
+div.nboutput.container div.prompt,
+div.nboutput.container div.output_area,
+div.nboutput.container div[class*=highlight],
+div.nboutput.container div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput.container div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput.container,
+div.nboutput.container {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput.container,
+    div.nboutput.container {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput.container {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast.container {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput.container div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput.container div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
+    width: 4.5ex;
+    padding-top: 5px;
+    position: relative;
+    user-select: none;
+}
+
+div.nbinput.container div.prompt > div,
+div.nboutput.container div.prompt > div {
+    position: absolute;
+    right: 0;
+    margin-right: 0.3ex;
+}
+
+@media (max-width: 540px) {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
+        width: unset;
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput.container div.prompt.empty {
+        padding: 0;
+    }
+
+    div.nbinput.container div.prompt > div,
+    div.nboutput.container div.prompt > div {
+        position: unset;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput.container div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    background: #f5f5f5;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput.container div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput.container div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput.container div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 5px;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt a.copybtn {
+    display: none;
+}
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+div.rendered_html th {
+  font-weight: bold;
+}
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="Using-spock_chilean">
+<h1>Using <code class="docutils literal notranslate"><span class="pre">spock_chilean</span></code><a class="headerlink" href="#Using-spock_chilean" title="Permalink to this headline">¶</a></h1>
+<p>The next few lines are meant to show you an example of how to use <code class="docutils literal notranslate"><span class="pre">spock_chilean</span></code></p>
+<p>For each target you wish to schedule you will need to provide: * A name * RA (in degrees) * DEC (in gegrees) * the time the observations start * the time the observations end * the filter * the exposure time * the J magnitude (<em>optional</em>) * the spectra type (<em>optional</em>)</p>
+<div class="section" id="Initialisation">
+<h2>Initialisation<a class="headerlink" href="#Initialisation" title="Permalink to this headline">¶</a></h2>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">SPOCK_chilean</span>
+<span class="kn">from</span> <span class="nn">SPOCK_chilean.make_night_plans</span> <span class="kn">import</span> <span class="n">chilean_time</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">telescope</span> <span class="o">=</span> <span class="s1">&#39;Ganymede&#39;</span> <span class="c1"># name of telescope allocated</span>
+<span class="n">date</span> <span class="o">=</span> <span class="s1">&#39;2021-07-08&#39;</span>  <span class="c1"># start of night date</span>
+
+
+<span class="n">chilean_nb_target</span> <span class="o">=</span> <span class="mi">2</span>  <span class="c1"># number of target to observe this night</span>
+<span class="n">counts</span> <span class="o">=</span> <span class="mi">5000</span>  <span class="c1"># counts of images per targets (no limit = 5000)</span>
+
+<span class="n">chilean_plans</span> <span class="o">=</span> <span class="n">chilean_time</span><span class="p">(</span><span class="n">date</span><span class="p">,</span> <span class="n">telescope</span><span class="p">)</span> <span class="c1"># Initialize the chilean_time object</span>
+
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="Data-frame-with-information-on-targets">
+<h2>Data frame with information on targets<a class="headerlink" href="#Data-frame-with-information-on-targets" title="Permalink to this headline">¶</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">target_chilean</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;Date&#39;</span><span class="p">:</span> <span class="n">date</span><span class="p">,</span> <span class="s1">&#39;Telescope&#39;</span><span class="p">:</span> <span class="n">telescope</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;Ch_HATS-20&#39;</span><span class="p">,</span>
+                               <span class="s1">&#39;Start&#39;</span><span class="p">:</span> <span class="s1">&#39;2021-07-08 22:30:00.000&#39;</span><span class="p">,</span>
+                               <span class="s1">&#39;End&#39;</span><span class="p">:</span> <span class="s1">&#39;2021-07-09 03:30:00.000&#39;</span><span class="p">,</span>
+                               <span class="s1">&#39;RA&#39;</span><span class="p">:</span>   <span class="mf">198.1329246</span><span class="p">,</span>
+                               <span class="s1">&#39;DEC&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">45.5905664</span><span class="p">,</span> <span class="s1">&#39;Filter&#39;</span><span class="p">:</span> <span class="s1">&#39;r</span><span class="se">\&#39;</span><span class="s1">&#39;</span><span class="p">,</span>
+                               <span class="s1">&#39;texp&#39;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
+                               <span class="s1">&#39;Counts&#39;</span><span class="p">:</span> <span class="n">counts</span><span class="p">,</span> <span class="s1">&#39;Vmag&#39;</span><span class="p">:</span> <span class="mf">13.77</span><span class="p">,</span> <span class="s1">&#39;SpT&#39;</span><span class="p">:</span> <span class="s1">&#39;G8&#39;</span><span class="p">},</span>
+                              <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="k">if</span> <span class="n">chilean_nb_target</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="n">other_target</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Date&#39;</span><span class="p">:</span> <span class="n">date</span><span class="p">,</span> <span class="s1">&#39;Telescope&#39;</span><span class="p">:</span> <span class="n">telescope</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;Ch_OGLE-TR-10&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;Start&#39;</span><span class="p">:</span> <span class="s1">&#39;2021-07-09 03:30:00.000&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;End&#39;</span><span class="p">:</span> <span class="s1">&#39;2021-07-09 08:15:00.000&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;RA&#39;</span><span class="p">:</span>  <span class="mf">267.8677458</span><span class="p">,</span>
+                    <span class="s1">&#39;DEC&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">29.8764535</span><span class="p">,</span>
+                    <span class="s1">&#39;Filter&#39;</span><span class="p">:</span> <span class="s1">&#39;I+z&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;texp&#39;</span><span class="p">:</span> <span class="mi">60</span><span class="p">,</span>
+                    <span class="s1">&#39;Counts&#39;</span><span class="p">:</span> <span class="n">counts</span><span class="p">,</span> <span class="s1">&#39;Vmag&#39;</span><span class="p">:</span> <span class="mf">15.78</span><span class="p">,</span> <span class="s1">&#39;SpT&#39;</span><span class="p">:</span> <span class="s1">&#39;F5&#39;</span><span class="p">}</span>
+    <span class="n">target_chilean</span> <span class="o">=</span> <span class="n">target_chilean</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">other_target</span><span class="p">,</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sort</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">target_chilean</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Date</th>
+      <th>Telescope</th>
+      <th>Name</th>
+      <th>Start</th>
+      <th>End</th>
+      <th>RA</th>
+      <th>DEC</th>
+      <th>Filter</th>
+      <th>texp</th>
+      <th>Counts</th>
+      <th>Vmag</th>
+      <th>SpT</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2021-07-08</td>
+      <td>Ganymede</td>
+      <td>Ch_HATS-20</td>
+      <td>2021-07-08 22:30:00.000</td>
+      <td>2021-07-09 03:30:00.000</td>
+      <td>198.132925</td>
+      <td>-45.590566</td>
+      <td>r'</td>
+      <td>30</td>
+      <td>5000</td>
+      <td>13.77</td>
+      <td>G8</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2021-07-08</td>
+      <td>Ganymede</td>
+      <td>Ch_OGLE-TR-10</td>
+      <td>2021-07-09 03:30:00.000</td>
+      <td>2021-07-09 08:15:00.000</td>
+      <td>267.867746</td>
+      <td>-29.876454</td>
+      <td>I+z</td>
+      <td>60</td>
+      <td>5000</td>
+      <td>15.78</td>
+      <td>F5</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+</div>
+<div class="section" id="Make-night_blocks">
+<h2>Make night_blocks<a class="headerlink" href="#Make-night_blocks" title="Permalink to this headline">¶</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">chilean_plans</span><span class="o">.</span><span class="n">make_night_block</span><span class="p">(</span><span class="n">target_chilean</span><span class="p">)</span>
+<span class="n">SPOCK_chilean</span><span class="o">.</span><span class="n">read_night_block</span><span class="p">(</span><span class="n">telescope</span><span class="p">,</span> <span class="n">date</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-green-fg">INFO: </span><span class="ansi-black-fg">The optimum exposure time for Ch_HATS-20 SpT G8 and V magnitude 13.77 with Filter r&#39; is: 21.713199784582073seconds
+For texp:30, expected peak [ADU]:        62174.1619564794
+</span><span class="ansi-yellow-fg">WARNING: </span><span class="ansi-black-fg">the target might get saturated, please decrease the exposure time.
+</span><span class="ansi-green-fg">INFO: </span><span class="ansi-black-fg">The optimum exposure time for Ch_OGLE-TR-10 SpT F5 and V magnitude 15.78 with Filter I+z is: 114.2621923075942seconds
+For texp:60, expected peak [ADU]:        23629.863434893607
+</span><span class="ansi-green-fg">INFO: </span><span class="ansi-black-fg"> the exposure time chosen is ok, no saturation expected.</span>
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<i>Table length=2</i>
+<table id="table4911235760" class="table-striped table-bordered table-condensed">
+<thead><tr><th>target</th><th>start time (UTC)</th><th>end time (UTC)</th><th>duration (minutes)</th><th>ra (h)</th><th>ra (m)</th><th>ra (s)</th><th>dec (d)</th><th>dec (m)</th><th>dec (s)</th><th>configuration</th></tr></thead>
+<thead><tr><th>str13</th><th>str23</th><th>str23</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>str27</th></tr></thead>
+<tr><td>Ch_HATS-20</td><td>2021-07-08 22:46:10.320</td><td>2021-07-09 03:30:00.000</td><td>283.8280005007982</td><td>13.0</td><td>12.0</td><td>31.90190400000745</td><td>-45.0</td><td>-35.0</td><td>-26.03904000000057</td><td>{&apos;filt&apos;: &quot;r&apos;&quot;, &apos;texp&apos;: 30}</td></tr>
+<tr><td>Ch_OGLE-TR-10</td><td>2021-07-09 03:30:00.000</td><td>2021-07-09 08:15:00.000</td><td>284.9999997764826</td><td>17.0</td><td>51.0</td><td>28.258992000015724</td><td>-29.0</td><td>-52.0</td><td>-35.23260000000079</td><td>{&apos;filt&apos;: &apos;I+z&apos;, &apos;texp&apos;: 60}</td></tr>
+</table></div>
+</div>
+</div>
+<div class="section" id="Check-night_blocks-respect-SPECULOOS-constraints">
+<h2>Check night_blocks respect SPECULOOS constraints<a class="headerlink" href="#Check-night_blocks-respect-SPECULOOS-constraints" title="Permalink to this headline">¶</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">chilean_plans</span><span class="o">.</span><span class="n">check_night_blocks</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-green-fg">INFO: </span><span class="ansi-black-fg">OK, filter chosen for Ch_HATS-20 is in the list
+</span><span class="ansi-green-fg">INFO: </span><span class="ansi-black-fg">OK, exposure time chosen for Ch_HATS-20 is &gt;10s
+</span><span class="ansi-green-fg">INFO: </span><span class="ansi-black-fg">OK, field Ch_HATS-20 respects the elevation constraint
+</span><span class="ansi-green-fg">INFO: </span><span class="ansi-black-fg">OK, field Ch_HATS-20 respects the moon constraint
+</span><span class="ansi-green-fg">INFO: </span><span class="ansi-black-fg">Ok, field Ch_HATS-20 is scheduled for more than 15 min
+</span><span class="ansi-green-fg">INFO: </span><span class="ansi-black-fg">OK, field Ch_HATS-20 does not contain a SPECULOOS target
+</span><span class="ansi-green-fg">INFO: </span><span class="ansi-black-fg">Check completed, for Ch_HATS-20, you can send the night_blocks to educrot@uliege.be or to GXG831@student.bham.ac.uk.
+</span><span class="ansi-green-fg">INFO: </span><span class="ansi-black-fg">OK, filter chosen for Ch_OGLE-TR-10 is in the list
+</span><span class="ansi-green-fg">INFO: </span><span class="ansi-black-fg">OK, exposure time chosen for Ch_OGLE-TR-10 is &gt;10s
+</span><span class="ansi-green-fg">INFO: </span><span class="ansi-black-fg">OK, field Ch_OGLE-TR-10 respects the elevation constraint
+</span><span class="ansi-green-fg">INFO: </span><span class="ansi-black-fg">OK, field Ch_OGLE-TR-10 respects the moon constraint
+</span><span class="ansi-green-fg">INFO: </span><span class="ansi-black-fg">Ok, field Ch_OGLE-TR-10 is scheduled for more than 15 min
+</span><span class="ansi-green-fg">INFO: </span><span class="ansi-black-fg">OK, field Ch_OGLE-TR-10 does not contain a SPECULOOS target
+</span><span class="ansi-green-fg">INFO: </span><span class="ansi-black-fg">Check completed, for Ch_OGLE-TR-10, you can send the night_blocks to educrot@uliege.be or to GXG831@student.bham.ac.uk. </span>
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+True
+</pre></div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="tutorial_videos.html" class="btn btn-neutral float-right" title="Tutorial videos" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../content/installation.html" class="btn btn-neutral float-left" title="Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Elsa Ducrot
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-XXXXXXX-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+
+    
+   
+
+</body>
+</html>
