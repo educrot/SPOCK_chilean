@@ -8,6 +8,12 @@ Chilean_SPOCKapp.html
 
 .travis.yml
 
-build/
+build/lib
+
+build/bdist.macosx-10.9-x86_64
 
 dist/
+
+.idea
+
+.ipynb_checkpoints
