@@ -17,6 +17,12 @@ setup.py
 .ipynb_checkpoints/Chilean_SPOCKapp-checkpoint.ipynb
 .ipynb_checkpoints/run-checkpoint.ipynb
 Archive_night_blocks_chilean/.DS_Store
+Archive_night_blocks_chilean/night_blocks_Ganymede_2021-07-06.txt
+Archive_night_blocks_chilean/night_blocks_Ganymede_2021-07-07.txt
+Archive_night_blocks_chilean/night_blocks_Ganymede_2021-07-08.txt
+Archive_night_blocks_chilean/night_blocks_Ganymede_2021-07-14.txt
+Archive_night_blocks_chilean/night_blocks_Ganymede_2021-07-15.txt
+Archive_night_blocks_chilean/night_blocks_Ganymede_2021-07-16.txt
 Plans_by_date/.DS_Store
 SPOCK_chilean/.DS_Store
 SPOCK_chilean/ETC.py
@@ -30,6 +36,7 @@ SPOCK_chilean.egg-info/dependency_links.txt
 SPOCK_chilean.egg-info/requires.txt
 SPOCK_chilean.egg-info/top_level.txt
 SPOCK_chilean/__pycache__/ETC.cpython-37.pyc
+SPOCK_chilean/__pycache__/__init__.cpython-37.pyc
 SPOCK_chilean/__pycache__/make_night_plans.cpython-37.pyc
 SPOCK_chilean/__pycache__/txt_files.cpython-37.pyc
 SPOCK_chilean/files_ETC/.DS_Store
@@ -198,3 +205,9 @@ docs/source/content/api.rst
 docs/source/content/installation.rst
 docs/source/content/quick-ref.rst
 docs/source/examples/.DS_Store
+docs/source/examples/test.mov
+docs/source/examples/test2.mov
+docs/source/examples/tutorial_videos.ipynb
+docs/source/examples/using_spock_chilean.ipynb
+docs/source/examples/.ipynb_checkpoints/tutorial_videos-checkpoint.ipynb
+docs/source/examples/.ipynb_checkpoints/using_spock_chilean-checkpoint.ipynb
