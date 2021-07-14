@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3b58c3b0-27c9-44fe-978e-a55140a5e06a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Archive_night_blocks_chilean/night_blocks_Ganymede_2021-07-07.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Archive_night_blocks_chilean/night_blocks_Ganymede_2021-07-07.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/source/examples/using_spock_chilean.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/docs/source/examples/using_spock_chilean.ipynb" afterDir="false" />
-    </list>
+    <list default="true" id="3b58c3b0-27c9-44fe-978e-a55140a5e06a" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
