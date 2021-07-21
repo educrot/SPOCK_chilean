@@ -476,7 +476,7 @@ class chilean_time:
                 observable_elevation = is_always_observable(constraint_elevation, self.observatory, target,
                                                             time_range=time_range)
             except ValueError:
-                sys.exit(Fore.RED + 'ERROR: ' + Fore.BLACK
+                raise ValueError(Fore.RED + 'ERROR: ' + Fore.BLACK
                          + ' Please make sure the start/end time are consistent with the date indicated.')
             observable_moon = is_observable(constraint_moon, self.observatory, target,
                                             time_range=time_range)
@@ -484,7 +484,7 @@ class chilean_time:
                 print(Fore.GREEN + 'INFO: ' + Fore.BLACK + 'OK, field ' + target_name
                       + ' respects the elevation constraint')
             if not observable_elevation:
-                sys.exit(Fore.RED + 'ERROR: ' + Fore.BLACK + 'field ' + target_name
+                raise ValueError(Fore.RED + 'ERROR: ' + Fore.BLACK + 'field ' + target_name
                          + ' does NOT respect the constraint of elevation (<23°)')
             if observable_moon:
                 print(Fore.GREEN + 'INFO: ' + Fore.BLACK + 'OK, field ' + target_name
