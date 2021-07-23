@@ -325,13 +325,13 @@ class chilean_time:
                             if filt in filt_accepted:
                                 print('INFO: OK, filter chosen for '+ target_name + ' is in the list')
                             else:
-                                sys.exit('ERROR: The filter chosen for target ' + target_name +
+                                raise ValueError('ERROR: The filter chosen for target ' + target_name +
                                          ' is NOT in the filters list (list is [I+z,z\',i\',r\'])')
 
                         elif line.startswith('#interval'):
                             texp = line[9:].replace('\n', '')
                             if int(texp) < 10:
-                                sys.exit('ERROR: The exposure time for target ' + target_name + ' is < 10s')
+                                raise ValueError('ERROR: The exposure time for target ' + target_name + ' is < 10s')
                             else:
                                 print('INFO: OK, exposure time chosen for ' + target_name + ' is >10s')
 
@@ -358,7 +358,7 @@ class chilean_time:
                                 print(Fore.GREEN + 'INFO: ' + Fore.BLACK + 'OK, field ' + target_name
                                       + ' respects the elevation constraint')
                             if not observable_elevation:
-                                sys.exit('ERROR: field ' + target_name
+                                raise ValueError('ERROR: field ' + target_name
                                          + ' does NOT respect the constraint of elevation (<23°)')
                             if observable_moon:
                                 print(Fore.GREEN + 'INFO: ' + Fore.BLACK + 'OK, field ' + target_name
@@ -371,7 +371,7 @@ class chilean_time:
                                       + ' is very close to polar (>80) quality will be worst than usual')
 
                             if self.time_end < self.time_start:
-                                sys.exit(Fore.YELLOW + 'WARNING: ' + Fore.BLACK +  'Start time of field '
+                                raise ValueError(Fore.YELLOW + 'WARNING: ' + Fore.BLACK +  'Start time of field '
                                          + target_name + ' is > to end time')
                             elif self.time_start < twilight_evening:
                                 print(Fore.YELLOW + 'WARNING: ' + Fore.BLACK +  'Start time of field '
@@ -380,7 +380,7 @@ class chilean_time:
                                 print(Fore.YELLOW + 'WARNING: ' + Fore.BLACK +  'End time of field '
                                       + target_name + ' is > to nautical morning twilight !')
                             elif (Time(self.time_end).jd - Time(self.time_start).jd)*24*60 < 15:
-                                sys.exit('ERROR: You can NOT schedule field ' + target_name + ' for less than 15 min')
+                                raise ValueError('ERROR: You can NOT schedule field ' + target_name + ' for less than 15 min')
                             else:
                                 print(Fore.GREEN + 'INFO: ' + Fore.BLACK + 'Ok, field ' + target_name + ' is scheduled for more than 15 min')
                             if self.check_distance_speculoos_targets(coords.ra, coords.dec, target_name):
@@ -441,13 +441,13 @@ class chilean_time:
             if filt in filt_accepted:
                 print(Fore.GREEN + 'INFO: ' + Fore.BLACK + 'OK, filter chosen for ' + target_name + ' is in the list')
             else:
-                sys.exit(Fore.RED + 'ERROR: ' + Fore.BLACK + 'The filter chosen for target ' + target_name +
+                raise ValueError(Fore.RED + 'ERROR: ' + Fore.BLACK + 'The filter chosen for target ' + target_name +
                          ' is NOT in the filters list (list is [I+z,z\',i\',r\'])')
 
             # Check texp is OK
             texp = conf['texp']
             if int(texp) < 10:
-                sys.exit(Fore.RED + 'ERROR: ' + Fore.BLACK + 'The exposure time for target ' + target_name + ' is < 10s')
+                raise ValueError(Fore.RED + 'ERROR: ' + Fore.BLACK + 'The exposure time for target ' + target_name + ' is < 10s')
             else:
                 print(Fore.GREEN + 'INFO: ' + Fore.BLACK + 'OK, exposure time chosen for ' + target_name + ' is >10s')
 
@@ -498,7 +498,7 @@ class chilean_time:
 
             # Check duration of observations
             elif (Time(self.time_end).jd - Time(self.time_start).jd)*24*60 < 15:
-                sys.exit(Fore.RED + 'ERROR: ' + Fore.BLACK + 'You can NOT schedule field '
+                raise ValueError(Fore.RED + 'ERROR: ' + Fore.BLACK + 'You can NOT schedule field '
                          + target_name + ' for less than 15 min')
             else:
                 print(Fore.GREEN + 'INFO: ' + Fore.BLACK + 'Ok, field '
@@ -541,7 +541,7 @@ class chilean_time:
         idx_speculoos_found = [np.where((catalog_data['designation'] == 'Gaia DR2 '
                                          + str(gaia_id))) for gaia_id in df['Gaia_ID']]
         if np.any(idx_speculoos_found):
-            sys.exit('ERROR: There is a SPECULOOS target in this field, please change your coordinates')
+            raise ValueError('ERROR: There is a SPECULOOS target in this field, please change your coordinates')
         else:
             print(Fore.GREEN + 'INFO: ' + Fore.BLACK + 'OK, field ' + target_name
                   + ' does not contain a SPECULOOS target')
