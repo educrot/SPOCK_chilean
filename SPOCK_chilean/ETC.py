@@ -411,7 +411,7 @@ class etc:
         # planet sensitivity
         sensi=np.sqrt(self.nsigma*errorbin_rn/earthtra)
 
-        print("For texp:"+str(exp_t)+"s, expected peak [ADU]:\t", peak/self.gain)
+        print("For texp:"+str(exp_t)+"s, expected peak [ADU]: ", round(peak/self.gain,2))
         # print("Sky [ADU]:\t", tbackape/self.gain)
         peak_ADU = peak/self.gain
         sky_gain = tbackape/self.gain

@@ -214,7 +214,7 @@ class chilean_time:
                         print(Fore.GREEN + 'INFO: ' + Fore.BLACK + "The optimum exposure time for " +
                               target_chilean["Name"][i] + " SpT " +
                               target_chilean['SpT'][i] + " and J magnitude " + str(target_chilean['Jmag'][i]) +
-                              " with Filter " + target_chilean['Filter'][i] + " is: " + str(texp) + 'seconds')
+                              " with Filter " + target_chilean['Filter'][i] + " is: " + str(round(texp, 1)) + ' seconds')
                         if target_chilean['texp'][i] is not None:
                             ADU_peak = a.peak_calculation(target_chilean['texp'][i])
                             if ADU_peak > 60000:
@@ -236,7 +236,7 @@ class chilean_time:
                         print(Fore.GREEN + 'INFO: ' + Fore.BLACK + "The optimum exposure time for " +
                               target_chilean["Name"][i] + " SpT " +
                               target_chilean['SpT'][i] + " and V magnitude " + str(target_chilean['Vmag'][i]) +
-                              " with Filter " + target_chilean['Filter'][i] + " is: " + str(texp) + 'seconds')
+                              " with Filter " + target_chilean['Filter'][i] + " is: " + str(round(texp, 1)) + ' seconds')
                         if target_chilean['texp'][i] is not None:
                             ADU_peak = a.peak_calculation(target_chilean['texp'][i])
                             if ADU_peak > 60000:
@@ -347,7 +347,7 @@ class chilean_time:
                                                                 dec=coords.dec.deg* u.degree),name=target_name)
                             constraint_elevation = [AltitudeConstraint(min=24 * u.deg),
                                                     AtNightConstraint.twilight_nautical()]  #
-                            constraint_moon = [ MoonSeparationConstraint(min=20*u.deg),
+                            constraint_moon = [MoonSeparationConstraint(min=20*u.deg),
                                                 AtNightConstraint.twilight_nautical()]
                             observable_elevation = is_always_observable(constraint_elevation, self.observatory, target,
                                                                         time_range=time_range)
@@ -437,7 +437,7 @@ class chilean_time:
 
             # Check filter is OK
             filt = conf['filt']
-            filt_accepted = ['I+z', 'z\'', 'i\'', 'r\'', 'i', 'r', 'z']
+            filt_accepted = ['I+z', 'z\'', 'i\'', 'r\'', 'g\'', 'i', 'r', 'z', 'g\'']
             if filt in filt_accepted:
                 print(Fore.GREEN + 'INFO: ' + Fore.BLACK + 'OK, filter chosen for ' + target_name + ' is in the list')
             else:
@@ -579,6 +579,8 @@ def save_night_blocks(target_chilean, date, telescope):
     df.to_csv(os.path.join(path_spock_chilean + '/Archive_night_blocks_chilean/night_blocks_' +
                            telescope + '_' + Time(date, out_subfmt='date').iso
                            + '.txt'), sep=' ', index=None)
+    # print(Fore.GREEN + 'INFO: ' + Fore.BLACK +
+    #       ' night blocks saved in the folder \"path_spock_chilean/Archive_night_blocks_chilean\"')
 
 
 def available_dates_telescopes(df):
