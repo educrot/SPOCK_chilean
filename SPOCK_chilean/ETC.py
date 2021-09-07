@@ -247,28 +247,28 @@ class etc:
                         'G0','G1','G2','G5','G8', \
                         'K0','K2','K5','K7', \
                         'M0','M2','M4','M5','M6','M7','M8','M9', \
-                        'L2','L5','L8'], \
+                        'L2','L5','L8','WD'], \
                         [-0.8,-0.73,-0.60,-0.46,-0.36, \
                         -0.16,-0.07,-0.02,0.09, \
                         0.37,0.48,0.67,0.79, \
                         1.03,1.055,1.08,1.25,1.32, \
                         1.46,1.81,2.22,2.71, \
                         2.96,3.58,4.42,5.39, 0.00, 0.00,0.00,0.00, \
-                        0.00,0.00,0.00],\
+                        0.00,0.00,0.00,0.00],\
                         [0.,0.,0.,0.,0., \
                         0.,0.,0.,0., \
                         0.,0.,0.,0., \
                         10.23,0.,0.,0.,0., \
                         0.,0.,0.,0., \
                         0.,0.,0.,0.,7.09,9.78,9.91,9.54, \
-                        13.41,12.83,13.25],
+                        13.41,12.83,13.25,0.0],
                         [7.4,6.5,4.8,3.7,3.0, \
                          2.4,2.15,2.0,1.7, \
                          1.5,1.4,1.3,1.2, \
                          1.1,1.05,1.,0.92,0.88, \
                          0.85,0.80,0.72,0.67, \
                          0.60,0.44,0.26,0.18,0.135,0.12,0.105,0.09, \
-                         0.105,0.105,0.105],
+                         0.105,0.105,0.105,0.0],
                          ['b0_pickles.dat','b1_pickles.dat','b3_pickles.dat','b6_pickles.dat','b8_pickles.dat', \
                           'a0_pickles.dat','a2_pickles.dat','a3_pickles.dat','a5_pickles.dat', \
                           'f0_pickles.dat','f2_pickles.dat','f5_pickles.dat','f8_pickles.dat', \
@@ -276,7 +276,7 @@ class etc:
                           'k0_pickles.dat','k2_pickles.dat','k5_pickles.dat','k7_pickles.dat', \
                           'm0_pickles.dat','m2_pickles.dat','m4_pickles.dat','m5_pickles.dat', \
                           'm6_gl406.dat','m7_gj644c.dat','m8_vb10.dat','m9_den1048.dat', \
-                          'l2_kelu1.dat','l5_2mass1507.dat','l8_den0255.dat']])
+                          'l2_kelu1.dat','l5_2mass1507.dat','l8_den0255.dat','wd_spectrum_odette.dat']])
         # Changed vref from 10.23 0. for G0 standard star
         spt_sel=np.array(self.spectra['type'].data)
 

@@ -16,7 +16,7 @@ target_chilean = pd.DataFrame({'Date': date, 'Telescope': telescope, 'Name': 'ch
                                'RA':  325.4898548,
                                'DEC': -33.0082781, 'Filter': 'g\'',
                                'texp': 22,
-                               'Counts': counts, '#target': 1, 'Gaia_ID': 'gaia_id', 'Jmag': 14.16, 'SpT': 'A0'},
+                               'Counts': counts, '#target': 1, 'Gaia_ID': 'gaia_id', 'Jmag': 14.16, 'SpT': 'WD'},
                               index=[0])
 if chilean_nb_target > 1:
     other_target = {'Date': date, 'Telescope': telescope, 'Name': 'ch_SDSS_J003708.42-052532.8',
