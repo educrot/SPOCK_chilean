@@ -18,14 +18,14 @@ SPOCK_chilean :py:class:`~SPOCK_chilean.make_night_plans.chilean_time` class hol
 .. autosummary::
    :nosignatures:
 
-    make_plans
+    make_night_block
 
 .. rubric:: Check plans
 
 .. autosummary::
    :nosignatures:
 
-    check_plans
+    check_night_blocks
 
 Functions to write text files
 ------------------------------

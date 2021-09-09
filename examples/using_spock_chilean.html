@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Using spock_chilean &mdash; SPOCK_chilean 0.0.0 documentation</title>
+  <title>Using spock_chilean with a script &mdash; SPOCK_chilean 1.0.0 documentation</title>
   
 
   
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                0.0
+                1.0
               </div>
             
           
@@ -96,7 +96,7 @@
 </ul>
 <p class="caption"><span class="caption-text">Examples &amp; Tutorials</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Using <code class="docutils literal notranslate"><span class="pre">spock_chilean</span></code></a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Using <code class="docutils literal notranslate"><span class="pre">spock_chilean</span></code> with a script</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#Initialisation">Initialisation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#Data-frame-with-information-on-targets">Data frame with information on targets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#Make-night_blocks">Make night_blocks</a></li>
@@ -149,7 +149,7 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Using <code class="docutils literal notranslate"><span class="pre">spock_chilean</span></code></li>
+      <li>Using <code class="docutils literal notranslate"><span class="pre">spock_chilean</span></code> with a script</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -423,14 +423,15 @@ div.rendered_html tbody tr:hover {
     text-align: unset;
 }
 </style>
-<div class="section" id="Using-spock_chilean">
-<h1>Using <code class="docutils literal notranslate"><span class="pre">spock_chilean</span></code><a class="headerlink" href="#Using-spock_chilean" title="Permalink to this headline">¶</a></h1>
-<p>The next few lines are meant to show you an example of how to use <code class="docutils literal notranslate"><span class="pre">spock_chilean</span></code></p>
+<div class="section" id="Using-spock_chilean-with-a-script">
+<h1>Using <code class="docutils literal notranslate"><span class="pre">spock_chilean</span></code> with a script<a class="headerlink" href="#Using-spock_chilean-with-a-script" title="Permalink to this headline">¶</a></h1>
+<p>The next few lines are meant to show you an example of how to use <code class="docutils literal notranslate"><span class="pre">spock_chilean</span></code>.</p>
 <p>For each target you wish to schedule you will need to provide: * A name * RA (in degrees) * DEC (in gegrees) * the time the observations start * the time the observations end * the filter * the exposure time * the J magnitude (<em>optional</em>) * the spectra type (<em>optional</em>)</p>
 <div class="section" id="Initialisation">
 <h2>Initialisation<a class="headerlink" href="#Initialisation" title="Permalink to this headline">¶</a></h2>
+<p>First open a jupyter Notebook and copy the following cells.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -443,12 +444,12 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">telescope</span> <span class="o">=</span> <span class="s1">&#39;Ganymede&#39;</span> <span class="c1"># name of telescope allocated</span>
-<span class="n">date</span> <span class="o">=</span> <span class="s1">&#39;2021-07-08&#39;</span>  <span class="c1"># start of night date</span>
+<span class="n">date</span> <span class="o">=</span> <span class="s1">&#39;2021-07-07&#39;</span>  <span class="c1"># start of night date</span>
 
 
 <span class="n">chilean_nb_target</span> <span class="o">=</span> <span class="mi">2</span>  <span class="c1"># number of target to observe this night</span>
@@ -463,27 +464,27 @@ div.rendered_html tbody tr:hover {
 <div class="section" id="Data-frame-with-information-on-targets">
 <h2>Data frame with information on targets<a class="headerlink" href="#Data-frame-with-information-on-targets" title="Permalink to this headline">¶</a></h2>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">target_chilean</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;Date&#39;</span><span class="p">:</span> <span class="n">date</span><span class="p">,</span> <span class="s1">&#39;Telescope&#39;</span><span class="p">:</span> <span class="n">telescope</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;Ch_HATS-20&#39;</span><span class="p">,</span>
-                               <span class="s1">&#39;Start&#39;</span><span class="p">:</span> <span class="s1">&#39;2021-07-08 22:30:00.000&#39;</span><span class="p">,</span>
-                               <span class="s1">&#39;End&#39;</span><span class="p">:</span> <span class="s1">&#39;2021-07-09 03:30:00.000&#39;</span><span class="p">,</span>
-                               <span class="s1">&#39;RA&#39;</span><span class="p">:</span>   <span class="mf">198.1329246</span><span class="p">,</span>
-                               <span class="s1">&#39;DEC&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">45.5905664</span><span class="p">,</span> <span class="s1">&#39;Filter&#39;</span><span class="p">:</span> <span class="s1">&#39;r</span><span class="se">\&#39;</span><span class="s1">&#39;</span><span class="p">,</span>
-                               <span class="s1">&#39;texp&#39;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
-                               <span class="s1">&#39;Counts&#39;</span><span class="p">:</span> <span class="n">counts</span><span class="p">,</span> <span class="s1">&#39;Vmag&#39;</span><span class="p">:</span> <span class="mf">13.77</span><span class="p">,</span> <span class="s1">&#39;SpT&#39;</span><span class="p">:</span> <span class="s1">&#39;G8&#39;</span><span class="p">},</span>
+<span></span><span class="n">target_chilean</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;Date&#39;</span><span class="p">:</span> <span class="n">date</span><span class="p">,</span> <span class="s1">&#39;Telescope&#39;</span><span class="p">:</span> <span class="n">telescope</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;Ch_WASP-157&#39;</span><span class="p">,</span>
+                               <span class="s1">&#39;Start&#39;</span><span class="p">:</span> <span class="s1">&#39;2021-07-07 22:30:00.000&#39;</span><span class="p">,</span>
+                               <span class="s1">&#39;End&#39;</span><span class="p">:</span> <span class="s1">&#39;2021-07-08 03:00:00.000&#39;</span><span class="p">,</span>
+                               <span class="s1">&#39;RA&#39;</span><span class="p">:</span>   <span class="mf">201.6552906</span><span class="p">,</span>
+                               <span class="s1">&#39;DEC&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">8.3175976</span><span class="p">,</span> <span class="s1">&#39;Filter&#39;</span><span class="p">:</span> <span class="s1">&#39;r</span><span class="se">\&#39;</span><span class="s1">&#39;</span><span class="p">,</span>
+                               <span class="s1">&#39;texp&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+                               <span class="s1">&#39;Counts&#39;</span><span class="p">:</span> <span class="n">counts</span><span class="p">,</span> <span class="s1">&#39;Vmag&#39;</span><span class="p">:</span> <span class="mf">12.9</span><span class="p">,</span> <span class="s1">&#39;SpT&#39;</span><span class="p">:</span> <span class="s1">&#39;G2&#39;</span><span class="p">},</span>
                               <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 <span class="k">if</span> <span class="n">chilean_nb_target</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
-    <span class="n">other_target</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Date&#39;</span><span class="p">:</span> <span class="n">date</span><span class="p">,</span> <span class="s1">&#39;Telescope&#39;</span><span class="p">:</span> <span class="n">telescope</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;Ch_OGLE-TR-10&#39;</span><span class="p">,</span>
-                    <span class="s1">&#39;Start&#39;</span><span class="p">:</span> <span class="s1">&#39;2021-07-09 03:30:00.000&#39;</span><span class="p">,</span>
-                    <span class="s1">&#39;End&#39;</span><span class="p">:</span> <span class="s1">&#39;2021-07-09 08:15:00.000&#39;</span><span class="p">,</span>
-                    <span class="s1">&#39;RA&#39;</span><span class="p">:</span>  <span class="mf">267.8677458</span><span class="p">,</span>
-                    <span class="s1">&#39;DEC&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">29.8764535</span><span class="p">,</span>
-                    <span class="s1">&#39;Filter&#39;</span><span class="p">:</span> <span class="s1">&#39;I+z&#39;</span><span class="p">,</span>
-                    <span class="s1">&#39;texp&#39;</span><span class="p">:</span> <span class="mi">60</span><span class="p">,</span>
-                    <span class="s1">&#39;Counts&#39;</span><span class="p">:</span> <span class="n">counts</span><span class="p">,</span> <span class="s1">&#39;Vmag&#39;</span><span class="p">:</span> <span class="mf">15.78</span><span class="p">,</span> <span class="s1">&#39;SpT&#39;</span><span class="p">:</span> <span class="s1">&#39;F5&#39;</span><span class="p">}</span>
+    <span class="n">other_target</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Date&#39;</span><span class="p">:</span> <span class="n">date</span><span class="p">,</span> <span class="s1">&#39;Telescope&#39;</span><span class="p">:</span> <span class="n">telescope</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;Ch_HATS-24&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;Start&#39;</span><span class="p">:</span> <span class="s1">&#39;2021-07-08 03:00:00.000&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;End&#39;</span><span class="p">:</span> <span class="s1">&#39;2021-07-08 09:15:00.000&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;RA&#39;</span><span class="p">:</span>  <span class="mf">268.8906975</span><span class="p">,</span>
+                    <span class="s1">&#39;DEC&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">61.7473242</span><span class="p">,</span>
+                    <span class="s1">&#39;Filter&#39;</span><span class="p">:</span> <span class="s1">&#39;r</span><span class="se">\&#39;</span><span class="s1">&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;texp&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+                    <span class="s1">&#39;Counts&#39;</span><span class="p">:</span> <span class="n">counts</span><span class="p">,</span> <span class="s1">&#39;Vmag&#39;</span><span class="p">:</span> <span class="mf">12.83</span><span class="p">,</span> <span class="s1">&#39;SpT&#39;</span><span class="p">:</span> <span class="s1">&#39;F8&#39;</span><span class="p">}</span>
     <span class="n">target_chilean</span> <span class="o">=</span> <span class="n">target_chilean</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">other_target</span><span class="p">,</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sort</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
 <span class="n">display</span><span class="p">(</span><span class="n">target_chilean</span><span class="p">)</span>
@@ -529,33 +530,33 @@ div.rendered_html tbody tr:hover {
   <tbody>
     <tr>
       <th>0</th>
-      <td>2021-07-08</td>
+      <td>2021-07-07</td>
       <td>Ganymede</td>
-      <td>Ch_HATS-20</td>
-      <td>2021-07-08 22:30:00.000</td>
-      <td>2021-07-09 03:30:00.000</td>
-      <td>198.132925</td>
-      <td>-45.590566</td>
+      <td>Ch_WASP-157</td>
+      <td>2021-07-07 22:30:00.000</td>
+      <td>2021-07-08 03:00:00.000</td>
+      <td>201.655291</td>
+      <td>-8.317598</td>
       <td>r'</td>
-      <td>30</td>
+      <td>10</td>
       <td>5000</td>
-      <td>13.77</td>
-      <td>G8</td>
+      <td>12.90</td>
+      <td>G2</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>2021-07-08</td>
+      <td>2021-07-07</td>
       <td>Ganymede</td>
-      <td>Ch_OGLE-TR-10</td>
-      <td>2021-07-09 03:30:00.000</td>
-      <td>2021-07-09 08:15:00.000</td>
-      <td>267.867746</td>
-      <td>-29.876454</td>
-      <td>I+z</td>
-      <td>60</td>
+      <td>Ch_HATS-24</td>
+      <td>2021-07-08 03:00:00.000</td>
+      <td>2021-07-08 09:15:00.000</td>
+      <td>268.890697</td>
+      <td>-61.747324</td>
+      <td>r'</td>
+      <td>10</td>
       <td>5000</td>
-      <td>15.78</td>
-      <td>F5</td>
+      <td>12.83</td>
+      <td>F8</td>
     </tr>
   </tbody>
 </table>
@@ -565,7 +566,7 @@ div.rendered_html tbody tr:hover {
 <div class="section" id="Make-night_blocks">
 <h2>Make night_blocks<a class="headerlink" href="#Make-night_blocks" title="Permalink to this headline">¶</a></h2>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -579,32 +580,32 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-<span class="ansi-green-fg">INFO: </span><span class="ansi-black-fg">The optimum exposure time for Ch_HATS-20 SpT G8 and V magnitude 13.77 with Filter r&#39; is: 21.713199784582073seconds
-For texp:30, expected peak [ADU]:        62174.1619564794
-</span><span class="ansi-yellow-fg">WARNING: </span><span class="ansi-black-fg">the target might get saturated, please decrease the exposure time.
-</span><span class="ansi-green-fg">INFO: </span><span class="ansi-black-fg">The optimum exposure time for Ch_OGLE-TR-10 SpT F5 and V magnitude 15.78 with Filter I+z is: 114.2621923075942seconds
-For texp:60, expected peak [ADU]:        23629.863434893607
+<span class="ansi-green-fg">INFO: </span><span class="ansi-black-fg">The optimum exposure time for Ch_WASP-157 SpT G2 and V magnitude 12.9 with Filter r&#39; is: 10.214588666607755seconds
+For texp:10s, expected peak [ADU]:       44054.63741002936
+</span><span class="ansi-green-fg">INFO: </span><span class="ansi-black-fg"> the exposure time chosen is ok, no saturation expected.
+</span><span class="ansi-green-fg">INFO: </span><span class="ansi-black-fg">The optimum exposure time for Ch_HATS-24 SpT F8 and V magnitude 12.83 with Filter r&#39; is: 9.897065800902036seconds
+For texp:10s, expected peak [ADU]:       45468.021437119896
 </span><span class="ansi-green-fg">INFO: </span><span class="ansi-black-fg"> the exposure time chosen is ok, no saturation expected.</span>
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
 <div class="output_area rendered_html docutils container">
 <i>Table length=2</i>
-<table id="table4911235760" class="table-striped table-bordered table-condensed">
+<table id="table4834410056" class="table-striped table-bordered table-condensed">
 <thead><tr><th>target</th><th>start time (UTC)</th><th>end time (UTC)</th><th>duration (minutes)</th><th>ra (h)</th><th>ra (m)</th><th>ra (s)</th><th>dec (d)</th><th>dec (m)</th><th>dec (s)</th><th>configuration</th></tr></thead>
-<thead><tr><th>str13</th><th>str23</th><th>str23</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>str27</th></tr></thead>
-<tr><td>Ch_HATS-20</td><td>2021-07-08 22:46:10.320</td><td>2021-07-09 03:30:00.000</td><td>283.8280005007982</td><td>13.0</td><td>12.0</td><td>31.90190400000745</td><td>-45.0</td><td>-35.0</td><td>-26.03904000000057</td><td>{&apos;filt&apos;: &quot;r&apos;&quot;, &apos;texp&apos;: 30}</td></tr>
-<tr><td>Ch_OGLE-TR-10</td><td>2021-07-09 03:30:00.000</td><td>2021-07-09 08:15:00.000</td><td>284.9999997764826</td><td>17.0</td><td>51.0</td><td>28.258992000015724</td><td>-29.0</td><td>-52.0</td><td>-35.23260000000079</td><td>{&apos;filt&apos;: &apos;I+z&apos;, &apos;texp&apos;: 60}</td></tr>
+<thead><tr><th>str11</th><th>str23</th><th>str23</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>str26</th></tr></thead>
+<tr><td>Ch_WASP-157</td><td>2021-07-07 22:45:48.179</td><td>2021-07-08 03:00:00.000</td><td>254.19701658189297</td><td>13.0</td><td>26.0</td><td>37.269744000010405</td><td>-8.0</td><td>-19.0</td><td>-3.35135999999693</td><td>{&apos;filt&apos;: &quot;r&apos;&quot;, &apos;texp&apos;: 10}</td></tr>
+<tr><td>Ch_HATS-24</td><td>2021-07-08 03:00:00.000</td><td>2021-07-08 09:15:00.000</td><td>374.9999997764826</td><td>17.0</td><td>55.0</td><td>33.767400000006376</td><td>-61.0</td><td>-44.0</td><td>-50.367120000004775</td><td>{&apos;filt&apos;: &quot;r&apos;&quot;, &apos;texp&apos;: 10}</td></tr>
 </table></div>
 </div>
 </div>
 <div class="section" id="Check-night_blocks-respect-SPECULOOS-constraints">
 <h2>Check night_blocks respect SPECULOOS constraints<a class="headerlink" href="#Check-night_blocks-respect-SPECULOOS-constraints" title="Permalink to this headline">¶</a></h2>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -617,24 +618,24 @@ For texp:60, expected peak [ADU]:        23629.863434893607
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-<span class="ansi-green-fg">INFO: </span><span class="ansi-black-fg">OK, filter chosen for Ch_HATS-20 is in the list
-</span><span class="ansi-green-fg">INFO: </span><span class="ansi-black-fg">OK, exposure time chosen for Ch_HATS-20 is &gt;10s
-</span><span class="ansi-green-fg">INFO: </span><span class="ansi-black-fg">OK, field Ch_HATS-20 respects the elevation constraint
-</span><span class="ansi-green-fg">INFO: </span><span class="ansi-black-fg">OK, field Ch_HATS-20 respects the moon constraint
-</span><span class="ansi-green-fg">INFO: </span><span class="ansi-black-fg">Ok, field Ch_HATS-20 is scheduled for more than 15 min
-</span><span class="ansi-green-fg">INFO: </span><span class="ansi-black-fg">OK, field Ch_HATS-20 does not contain a SPECULOOS target
-</span><span class="ansi-green-fg">INFO: </span><span class="ansi-black-fg">Check completed, for Ch_HATS-20, you can send the night_blocks to educrot@uliege.be or to GXG831@student.bham.ac.uk.
-</span><span class="ansi-green-fg">INFO: </span><span class="ansi-black-fg">OK, filter chosen for Ch_OGLE-TR-10 is in the list
-</span><span class="ansi-green-fg">INFO: </span><span class="ansi-black-fg">OK, exposure time chosen for Ch_OGLE-TR-10 is &gt;10s
-</span><span class="ansi-green-fg">INFO: </span><span class="ansi-black-fg">OK, field Ch_OGLE-TR-10 respects the elevation constraint
-</span><span class="ansi-green-fg">INFO: </span><span class="ansi-black-fg">OK, field Ch_OGLE-TR-10 respects the moon constraint
-</span><span class="ansi-green-fg">INFO: </span><span class="ansi-black-fg">Ok, field Ch_OGLE-TR-10 is scheduled for more than 15 min
-</span><span class="ansi-green-fg">INFO: </span><span class="ansi-black-fg">OK, field Ch_OGLE-TR-10 does not contain a SPECULOOS target
-</span><span class="ansi-green-fg">INFO: </span><span class="ansi-black-fg">Check completed, for Ch_OGLE-TR-10, you can send the night_blocks to educrot@uliege.be or to GXG831@student.bham.ac.uk. </span>
+<span class="ansi-green-fg">INFO: </span><span class="ansi-black-fg">OK, filter chosen for Ch_WASP-157 is in the list
+</span><span class="ansi-green-fg">INFO: </span><span class="ansi-black-fg">OK, exposure time chosen for Ch_WASP-157 is &gt;10s
+</span><span class="ansi-green-fg">INFO: </span><span class="ansi-black-fg">OK, field Ch_WASP-157 respects the elevation constraint
+</span><span class="ansi-green-fg">INFO: </span><span class="ansi-black-fg">OK, field Ch_WASP-157 respects the moon constraint
+</span><span class="ansi-green-fg">INFO: </span><span class="ansi-black-fg">Ok, field Ch_WASP-157 is scheduled for more than 15 min
+</span><span class="ansi-green-fg">INFO: </span><span class="ansi-black-fg">OK, field Ch_WASP-157 does not contain a SPECULOOS target
+</span><span class="ansi-green-fg">INFO: </span><span class="ansi-black-fg">Check completed, for Ch_WASP-157, you can send the night_blocks to educrot@uliege.be or to GXG831@student.bham.ac.uk.
+</span><span class="ansi-green-fg">INFO: </span><span class="ansi-black-fg">OK, filter chosen for Ch_HATS-24 is in the list
+</span><span class="ansi-green-fg">INFO: </span><span class="ansi-black-fg">OK, exposure time chosen for Ch_HATS-24 is &gt;10s
+</span><span class="ansi-green-fg">INFO: </span><span class="ansi-black-fg">OK, field Ch_HATS-24 respects the elevation constraint
+</span><span class="ansi-green-fg">INFO: </span><span class="ansi-black-fg">OK, field Ch_HATS-24 respects the moon constraint
+</span><span class="ansi-green-fg">INFO: </span><span class="ansi-black-fg">Ok, field Ch_HATS-24 is scheduled for more than 15 min
+</span><span class="ansi-green-fg">INFO: </span><span class="ansi-black-fg">OK, field Ch_HATS-24 does not contain a SPECULOOS target
+</span><span class="ansi-green-fg">INFO: </span><span class="ansi-black-fg">Check completed, for Ch_HATS-24, you can send the night_blocks to educrot@uliege.be or to GXG831@student.bham.ac.uk. </span>
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
