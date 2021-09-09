@@ -8,7 +8,7 @@ The SPOCK\_chilean API reference
 .. automodule:: SPOCK_chilean
    :members:
 
-Make night plans
+Make night blocks
 ------------------
 
 .. automodule:: SPOCK_chilean.make_night_plans
