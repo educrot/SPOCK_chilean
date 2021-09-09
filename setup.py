@@ -18,5 +18,5 @@ setup(
     long_description=read('README.rst'),
     python_requires='>=3.6',
     install_requires=['pandas','numpy==1.19.0','astroquery','astroplan==0.8','astropy==4.2.1','matplotlib','datetime','pyaml',
-                      'python-docx','plotly','scipy','xlrd==1.2.0', "colorama", "ipython", "termcolor", "xlrd"],
+                      'python-docx','plotly','scipy','xlrd==1.2.0', "colorama", "ipython", "termcolor"],
 )
