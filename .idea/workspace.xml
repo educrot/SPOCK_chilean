@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3b58c3b0-27c9-44fe-978e-a55140a5e06a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Archive_night_blocks_chilean/night_blocks_Europa_2021-09-10.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Archive_night_blocks_chilean/night_blocks_Europa_2021-09-10.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Archive_night_blocks_chilean/night_blocks_Europa_2021-09-11.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Archive_night_blocks_chilean/night_blocks_Europa_2021-09-11.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Archive_night_blocks_chilean/night_blocks_Io_2021-09-02.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Archive_night_blocks_chilean/night_blocks_Io_2021-09-02.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Archive_night_blocks_chilean/night_blocks__2021-09-10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Archive_night_blocks_chilean/night_blocks__2021-09-11.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/~$ilean_time_SSO.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
