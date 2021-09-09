@@ -2,7 +2,52 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3b58c3b0-27c9-44fe-978e-a55140a5e06a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/.buildinfo" beforeDir="false" afterPath="$PROJECT_DIR$/doc/build/.buildinfo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/.doctrees/api/SPOCK_chilean.ETC.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/.doctrees/api/SPOCK_chilean.make_night_plans.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/.doctrees/api/SPOCK_chilean.txt_files.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/.doctrees/content/quick-ref.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doc/build/.doctrees/content/quick-ref.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/.doctrees/environment.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/doc/build/.doctrees/environment.pickle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/.doctrees/examples/tutorial_videos.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doc/build/.doctrees/examples/tutorial_videos.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/.doctrees/examples/using_spock_chilean.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/doc/build/.doctrees/examples/using_spock_chilean.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/.doctrees/nbsphinx/examples/tutorial_videos.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/doc/build/.doctrees/nbsphinx/examples/tutorial_videos.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/.doctrees/nbsphinx/examples/using_spock_chilean.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/doc/build/.doctrees/nbsphinx/examples/using_spock_chilean.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/_modules/SPOCK_chilean/make_night_plans.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/build/_modules/SPOCK_chilean/make_night_plans.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/_modules/SPOCK_chilean/txt_files.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/build/_modules/SPOCK_chilean/txt_files.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/_modules/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/build/_modules/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/_sources/api/SPOCK_chilean.ETC.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/_sources/api/SPOCK_chilean.make_night_plans.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/_sources/api/SPOCK_chilean.txt_files.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/_sources/content/quick-ref.rst.txt" beforeDir="false" afterPath="$PROJECT_DIR$/doc/build/_sources/content/quick-ref.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/_sources/examples/tutorial_videos.ipynb.txt" beforeDir="false" afterPath="$PROJECT_DIR$/doc/build/_sources/examples/tutorial_videos.ipynb.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/_sources/examples/using_spock_chilean.ipynb.txt" beforeDir="false" afterPath="$PROJECT_DIR$/doc/build/_sources/examples/using_spock_chilean.ipynb.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/_static/documentation_options.js" beforeDir="false" afterPath="$PROJECT_DIR$/doc/build/_static/documentation_options.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/api/SPOCK_chilean.ETC.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/api/SPOCK_chilean.make_night_plans.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/api/SPOCK_chilean.txt_files.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/content/api.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/build/content/api.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/content/installation.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/build/content/installation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/content/quick-ref.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/build/content/quick-ref.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/examples/tutorial_videos.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/build/examples/tutorial_videos.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/examples/tutorial_videos.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/doc/build/examples/tutorial_videos.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/examples/using_spock_chilean.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/build/examples/using_spock_chilean.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/examples/using_spock_chilean.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/doc/build/examples/using_spock_chilean.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/genindex.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/build/genindex.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/build/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/objects.inv" beforeDir="false" afterPath="$PROJECT_DIR$/doc/build/objects.inv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/py-modindex.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/build/py-modindex.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/build/search.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/build/searchindex.js" beforeDir="false" afterPath="$PROJECT_DIR$/doc/build/searchindex.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/source/api/SPOCK_chilean.ETC.rst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/source/api/SPOCK_chilean.make_night_plans.rst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/source/api/SPOCK_chilean.txt_files.rst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/source/conf.py" beforeDir="false" afterPath="$PROJECT_DIR$/docs/source/conf.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/source/content/quick-ref.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/source/content/quick-ref.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/source/examples/test.mov" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/source/examples/test2.mov" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/source/examples/tutorial_videos.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/docs/source/examples/tutorial_videos.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/source/examples/using_spock_chilean.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/docs/source/examples/using_spock_chilean.ipynb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
