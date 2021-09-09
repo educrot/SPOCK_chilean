@@ -13,14 +13,14 @@ SPOCK_chilean :py:class:`~SPOCK_chilean.make_night_plans.chilean_time` class hol
 
 .. currentmodule:: SPOCK_chilean.make_night_plans.chilean_time
 
-.. rubric:: Make plans
+.. rubric:: Make night blocks
 
 .. autosummary::
    :nosignatures:
 
     make_night_block
 
-.. rubric:: Check plans
+.. rubric:: Check night blocks
 
 .. autosummary::
    :nosignatures:

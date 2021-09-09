@@ -10,3 +10,6 @@ python-docx
 plotly
 scipy
 xlrd==1.2.0
+colorama
+ipython
+termcolor
