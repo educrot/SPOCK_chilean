@@ -240,7 +240,7 @@ class etc:
         # plt.show()
 
         # available spectral types
-        self.spectra=Table(names=['type','vmj','vref','rs','file'],
+        self.spectra =Table(names=['type','vmj','vref','rs','file'],
                       data=[['B0','B1','B3','B6','B8', \
                         'A0','A2','A3','A5', \
                         'F0','F2','F5','F8', \
@@ -261,14 +261,14 @@ class etc:
                         10.23,0.,0.,0.,0., \
                         0.,0.,0.,0., \
                         0.,0.,0.,0.,7.09,9.78,9.91,9.54, \
-                        13.41,12.83,13.25,0.0],
+                        13.41,12.83,13.25,16.5],
                         [7.4,6.5,4.8,3.7,3.0, \
                          2.4,2.15,2.0,1.7, \
                          1.5,1.4,1.3,1.2, \
                          1.1,1.05,1.,0.92,0.88, \
                          0.85,0.80,0.72,0.67, \
                          0.60,0.44,0.26,0.18,0.135,0.12,0.105,0.09, \
-                         0.105,0.105,0.105,0.0],
+                         0.105,0.105,0.105,0.01],
                          ['b0_pickles.dat','b1_pickles.dat','b3_pickles.dat','b6_pickles.dat','b8_pickles.dat', \
                           'a0_pickles.dat','a2_pickles.dat','a3_pickles.dat','a5_pickles.dat', \
                           'f0_pickles.dat','f2_pickles.dat','f5_pickles.dat','f8_pickles.dat', \
@@ -278,7 +278,7 @@ class etc:
                           'm6_gl406.dat','m7_gj644c.dat','m8_vb10.dat','m9_den1048.dat', \
                           'l2_kelu1.dat','l5_2mass1507.dat','l8_den0255.dat','wd_spectrum_odette.dat']])
         # Changed vref from 10.23 0. for G0 standard star
-        spt_sel=np.array(self.spectra['type'].data)
+        spt_sel = np.array(self.spectra['type'].data)
 
         # get spectral type information
         try:

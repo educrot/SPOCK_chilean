@@ -5,32 +5,32 @@ import SPOCK_chilean.ETC as ETC
 # set in advance with the planning with SSO team
 telescope = 'Callisto'
 
-date = '2021-09-09'  # start of night date
+date = '2021-09-10'  # start of night date
 chilean_nb_target = 2  # number of target to observe this night
 counts = 5000  # counts of images per targets (no limit = 5000)
 chilean_plans = chilean_time(date, telescope)
 
-# target_chilean = pd.DataFrame({'Date': date, 'Telescope': telescope, 'Name': 'ch_WD_2138-332',
-#                                'Start': '2021-09-02 21:30:00.000',
-#                                'End': '2021-09-03 08:00:00.000',
-#                                'RA':  325.4898548,
-#                                'DEC': -33.0082781, 'Filter': 'g\'',
-#                                'texp': 1000,
-#                                'Counts': counts, '#target': 1, 'Gaia_ID': 'gaia_id', 'Jmag': 14.167,
-#                                'Vmag': 14.47, 'SpT': 'WD'},
-#                               index=[0])
-# if chilean_nb_target > 1:
-#     other_target = {'Date': date, 'Telescope': telescope, 'Name': 'ch_SDSS_J003708.42-052532.8',
-#                     'Start': '2021-09-03 08:00:00.000',
-#                     'End': '2021-09-03 11:00:00.000',
-#                     'RA':  9.2850942,
-#                     'DEC': -5.4257810,
-#                     'Filter': 'g\'',
-#                     'texp': 600,
-#                     'Counts': counts, '#target': 1, 'Gaia_ID': 'gaia_id', 'Jmag': 19, 'SpT': 'A0'}
-#     target_chilean = target_chilean.append(other_target, ignore_index=True, sort=False)
-#
-# chilean_plans.make_night_block(target_chilean)
+target_chilean = pd.DataFrame({'Date': date, 'Telescope': telescope, 'Name': 'ch_WD_2138-332',
+                               'Start': '2021-09-10 21:30:00.000',
+                               'End': '2021-09-11 08:00:00.000',
+                               'RA':  325.4898548,
+                               'DEC': -33.0082781, 'Filter': 'g\'',
+                               'texp': 50,
+                               'Counts': counts, '#target': 1, 'Gaia_ID': 'gaia_id', 'Jmag': 14.167,
+                               'SpT': 'WD'},
+                              index=[0])
+if chilean_nb_target > 1:
+    other_target = {'Date': date, 'Telescope': telescope, 'Name': 'ch_SDSS_J003708.42-052532.8',
+                    'Start': '2021-09-11 08:00:00.000',
+                    'End': '2021-09-11 11:00:00.000',
+                    'RA':  9.2850942,
+                    'DEC': -5.4257810,
+                    'Filter': 'g\'',
+                    'texp': 1200,
+                    'Counts': counts, '#target': 1, 'Gaia_ID': 'gaia_id', 'Jmag': 19, 'SpT': 'WD'}
+    target_chilean = target_chilean.append(other_target, ignore_index=True, sort=False)
+
+chilean_plans.make_night_block(target_chilean)
 
 chilean_plans.check_night_blocks()
 
