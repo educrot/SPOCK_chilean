@@ -4,6 +4,7 @@
 Chilean_SPOCKapp.ipynb
 Chilean_time_SSO.docx
 README.rst
+WD_vs_speculoos_filters.png
 calendar_chilean.xlsx
 calendar_chilean_summer2021.xlsx
 run.py
@@ -101,6 +102,7 @@ SPOCK_chilean/files_ETC/Spectra/o0_pickles.dat
 SPOCK_chilean/files_ETC/Spectra/o9_pickles.dat
 SPOCK_chilean/files_ETC/__pycache__/ETC.cpython-37.pyc
 doc/.DS_Store
+doc/build/.DS_Store
 doc/build/.buildinfo
 doc/build/.nojekyll
 doc/build/genindex.html
@@ -127,6 +129,7 @@ doc/build/_sources/content/installation.rst.txt
 doc/build/_sources/content/quick-ref.rst.txt
 doc/build/_sources/examples/tutorial_videos.ipynb.txt
 doc/build/_sources/examples/using_spock_chilean.ipynb.txt
+doc/build/_static/.DS_Store
 doc/build/_static/basic.css
 doc/build/_static/doctools.js
 doc/build/_static/documentation_options.js

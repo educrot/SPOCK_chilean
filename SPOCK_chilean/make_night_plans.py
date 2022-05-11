@@ -41,9 +41,9 @@ class chilean_time:
         """
 
         self.start_date = start_date
-        self.Path = path_spock_chilean + '/Plans_by_date/' + str(Time(start_date, out_subfmt='date').value)
+        self.Path = path_spock_chilean + '/../Plans_by_date/' + str(Time(start_date, out_subfmt='date').value)
         self.telescope = telescope
-        self.path_night_blocks = path_spock_chilean + '/Archive_night_blocks_chilean/' + \
+        self.path_night_blocks = path_spock_chilean + '/../Archive_night_blocks_chilean/' + \
                                  'night_blocks_' + str(telescope) + '_' + str(Time(start_date,
                                                                                    out_subfmt='date').value) + '.txt'
         self.location = EarthLocation.from_geodetic(-70.40300000000002 * u.deg, -24.625199999999996 * u.deg,
@@ -345,7 +345,7 @@ class chilean_time:
                             time_range = [Time(self.time_start), Time(self.time_end)]
                             target = FixedTarget(coord=SkyCoord(ra=coords.ra.deg * u.degree,
                                                                 dec=coords.dec.deg* u.degree),name=target_name)
-                            constraint_elevation = [AltitudeConstraint(min=24 * u.deg),
+                            constraint_elevation = [AltitudeConstraint(min=23 * u.deg),
                                                     AtNightConstraint.twilight_nautical()]  #
                             constraint_moon = [MoonSeparationConstraint(min=20*u.deg),
                                                 AtNightConstraint.twilight_nautical()]
@@ -470,7 +470,7 @@ class chilean_time:
             time_range = [Time(self.time_start), Time(self.time_end)]
             target = FixedTarget(coord=SkyCoord(ra=coords.ra.deg * u.degree,
                                                 dec=coords.dec.deg * u.degree), name=target_name)
-            constraint_elevation = [AltitudeConstraint(min=24 * u.deg)]  #
+            constraint_elevation = [AltitudeConstraint(min=23 * u.deg)]  #
             constraint_moon = [MoonSeparationConstraint(min=20*u.deg)]
             try:
                 observable_elevation = is_always_observable(constraint_elevation, self.observatory, target,
@@ -504,7 +504,7 @@ class chilean_time:
                 print(Fore.GREEN + 'INFO: ' + Fore.BLACK + 'Ok, field '
                       + target_name + ' is scheduled for more than 15 min')
 
-            # Check distance to SPEUCLOOS targets
+            # Check distance to SPECULOOS targets
             if self.check_distance_speculoos_targets(coords_str, target_name):
                 check_ok = True
             if check_ok:
@@ -537,7 +537,7 @@ class chilean_time:
         """
         check_ok = False
         catalog_data = Catalogs.query_object(coords_str, radius=6*np.sqrt(2) * u.arcminute, catalog="Gaia")
-        df = pd.read_csv(path_spock_chilean + '/SPOCK_chilean/speculoos_target_list_chilean_nights.txt', delimiter=' ')
+        df = pd.read_csv(path_spock_chilean + '/speculoos_target_list_chilean_nights.txt', delimiter=' ')
         idx_speculoos_found = [np.where((catalog_data['designation'] == 'Gaia DR2 '
                                          + str(gaia_id))) for gaia_id in df['Gaia_ID']]
         if np.any(idx_speculoos_found):
@@ -576,7 +576,7 @@ def save_night_blocks(target_chilean, date, telescope):
                        "ra (h)":ra1s, "ra (m)":ra2s, "ra (s)":ra3s, "dec (d)":dec1s, "dec (m)": dec2s,
                        "dec (s)":dec3s, "configuration": configurations})
 
-    df.to_csv(os.path.join(path_spock_chilean + '/Archive_night_blocks_chilean/night_blocks_' +
+    df.to_csv(os.path.join(path_spock_chilean + '/../Archive_night_blocks_chilean/night_blocks_' +
                            telescope + '_' + Time(date, out_subfmt='date').iso
                            + '.txt'), sep=' ', index=None)
     # print(Fore.GREEN + 'INFO: ' + Fore.BLACK +
@@ -619,7 +619,7 @@ def read_night_block(telescope, day):
     """
 
     day_fmt = Time(day, scale='utc', out_subfmt='date').tt.datetime.strftime("%Y-%m-%d")
-    path_local = path_spock_chilean + '/Archive_night_blocks_chilean/' + 'night_blocks_' + telescope + '_' + day_fmt + '.txt'
+    path_local = path_spock_chilean + '/../Archive_night_blocks_chilean/' + 'night_blocks_' + telescope + '_' + day_fmt + '.txt'
 
     if os.path.exists(path_local):
         scheduler_table = Table.read(path_local, format='ascii')
