@@ -1,5 +1,5 @@
 pandas
-numpy==1.19.0
+numpy==1.22.0
 astroquery
 astroplan==0.8
 astropy==4.2.1
